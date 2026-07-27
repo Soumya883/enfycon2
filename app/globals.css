@@ -1,0 +1,53 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-primary: "Plus Jakarta Sans", sans-serif;
+
+    
+    /* Primary brand colors based on screenshot */
+    --color-primary: #3b5bdb;
+    --color-primary-hover: #364fc7;
+    --color-primary-light: #edf2ff;
+    
+    /* Surface colors */
+    --color-surface-white: #ffffff;
+    --color-surface-gray: #f8f9fa;
+    --color-surface-dark: #12151e;
+    --color-surface-dark-card: #1c2130;
+    
+    /* Text colors */
+    --color-text-dark: #111827;
+    --color-text-muted: #6b7280;
+    --color-text-light: #ffffff;
+    --color-text-light-muted: #9ca3af;
+    
+    /* Borders */
+    --color-border-light: #e5e7eb;
+    --color-border-dark: #374151;
+  }
+}
+
+body {
+  font-family: var(--font-primary);
+  background-color: var(--color-surface-white);
+  color: var(--color-text-dark);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Custom Scrollbar for pills/tabs if needed */
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Gradient Text Utility */
+.text-gradient {
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
