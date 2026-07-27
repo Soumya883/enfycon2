@@ -2,14 +2,21 @@ const fs = require('fs');
 const path = require('path');
 
 const pages = [
-  'about', 'contact', 'careers', 'privacy', 'terms', 'faq',
-  'services/ai-agentic-solutions', 'services/ai-first-platforms', 'services/cybersecurity',
-  'services/enterprise-modernization', 'services/it-staffing', 'services/customer-engagement',
-  'industries/healthcare', 'industries/finance', 'industries/retail', 'industries/manufacturing',
-  'industries/telecom', 'industries/energy', 'industries/government', 'industries/education',
-  'case-studies/project-alpha', 'case-studies/project-beta', 'case-studies/project-gamma',
-  'blog/the-future-of-ai', 'blog/cybersecurity-trends', 'blog/it-staffing-challenges',
-  'partners', 'investors', 'newsroom', 'events', 'webinars'
+  'industries/banking', 'industries/finance', 'industries/healthcare',
+  'industries/government', 'industries/human-resource', 'industries/legal',
+  'industries/supply-chain-logistics', 'industries/manufacturing', 'industries/tourism',
+  
+  'products/enfysync', 'products/ivaak-ai', 'products/truefix-ai',
+  'products/icognito-ai', 'products/idental-ai', 'products/lexgenie-ai',
+  'products/quantfin-ai', 'products/performanceedge-ai', 'products/iwac-ai',
+
+  'services/ai-allied-services', 'services/it-professional-staffing',
+  'services/data-analytics', 'services/cybersecurity-services', 'services/digital-marketing',
+
+  'about', 'our-culture', 'csr', 'career', 'philosophy', 'code-of-ethics',
+  'candidate-awareness-notice', 'contact-us', 'blogs',
+  
+  'privacy-policy', 'cookie-policy', 'terms-and-conditions', 'site-map', 'media-kit'
 ];
 
 const template = (title) => `import Navbar from '@/components/Navbar';
@@ -17,11 +24,14 @@ import Footer from '@/components/Footer';
 
 export default function Page() {
   return (
-    <main className="min-h-screen bg-black flex flex-col">
+    <main className="min-h-screen bg-gray-50 flex flex-col">
       <Navbar />
-      <div className="flex-grow pt-32 pb-24 px-6 max-w-7xl mx-auto w-full">
-        <h1 className="text-4xl md:text-5xl font-bold text-white mb-6 capitalize">${title.replace(/-/g, ' ')}</h1>
-        <p className="text-[#c8c6c6] text-lg">This is the ${title.replace(/-/g, ' ')} page of the Enfycon enterprise platform. Content will be populated here.</p>
+      <div className="flex-grow pt-32 pb-24 px-6 max-w-7xl mx-auto w-full text-center">
+        <h1 className="text-4xl md:text-5xl font-bold text-black mb-6 capitalize">${title.replace(/-/g, ' ')}</h1>
+        <p className="text-gray-600 text-lg max-w-2xl mx-auto">
+          Welcome to the ${title.replace(/-/g, ' ')} section of Enfycon. 
+          This page layout will be generated using Stitch (MCP) for high-fidelity UI components.
+        </p>
       </div>
       <Footer />
     </main>
@@ -34,4 +44,4 @@ pages.forEach(page => {
   fs.writeFileSync(path.join(dir, 'page.jsx'), template(page.split('/').pop()));
 });
 
-console.log(`Generated ${pages.length} pages.`);
+console.log(`Successfully generated ${pages.length} placeholder pages for the true sitemap.`);
