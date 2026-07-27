@@ -3,7 +3,6 @@
 @layer base {
   :root {
     --font-primary: "Plus Jakarta Sans", sans-serif;
-    --font-secondary: "Space Grotesk", sans-serif;
   }
 }
 
@@ -13,15 +12,15 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Custom Scrollbar for sleek dark mode */
+/* Custom Scrollbar */
 ::-webkit-scrollbar {
   width: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: #030614;
+  background: #f1f1f1;
 }
 ::-webkit-scrollbar-thumb {
-  background: #1e293b;
+  background: #c1c1c1;
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
@@ -34,28 +33,4 @@ body {
 .hide-scrollbar {
   -ms-overflow-style: none;
   scrollbar-width: none;
-}
-
-/* Gradient Text Utility */
-.text-gradient {
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-/* Neon Glow Animations */
-@keyframes pulse-glow {
-  0%, 100% { opacity: 1; transform: scale(1); filter: drop-shadow(0 0 15px rgba(59,91,219,0.4)); }
-  50% { opacity: 0.8; transform: scale(1.02); filter: drop-shadow(0 0 25px rgba(59,91,219,0.8)); }
-}
-
-.animate-pulse-glow {
-  animation: pulse-glow 3s ease-in-out infinite;
-}
-
-/* Glass panel */
-.glass-panel {
-  background: rgba(255, 255, 255, 0.03);
-  backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.05);
 }
