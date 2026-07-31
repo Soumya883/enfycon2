@@ -56,9 +56,9 @@ export default function Services() {
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true }}
-              whileHover={{ y: -14, boxShadow: `0 30px 70px ${service.glow}` }}
-              transition={{ type: "spring", stiffness: 280, damping: 24 }}
-              className="group bg-white rounded-[20px] border border-slate-200/80 overflow-hidden transition-colors duration-500 hover:border-indigo-400 flex flex-col relative"
+              whileHover={{ y: -16, boxShadow: `0 36px 80px ${service.glow}` }}
+              transition={{ type: "spring", stiffness: 260, damping: 22 }}
+              className="group bg-white rounded-[20px] border border-slate-200/80 overflow-hidden transition-colors duration-500 hover:border-indigo-400 flex flex-col relative cursor-default"
             >
               {/* Hover gradient accent line on left */}
               <div className={`absolute left-0 top-6 bottom-6 w-0.5 bg-gradient-to-b ${service.color} scale-y-0 group-hover:scale-y-100 transition-transform duration-500 origin-top rounded-full`} />
@@ -92,7 +92,13 @@ export default function Services() {
                   className="inline-flex items-center gap-2 text-indigo-600 font-extrabold text-sm hover:text-indigo-800 transition-colors group/btn mt-auto"
                 >
                   <span className="relative after:absolute after:bottom-0 after:left-0 after:right-0 after:h-px after:bg-indigo-600 after:scale-x-0 group-hover/btn:after:scale-x-100 after:transition-transform after:duration-300 after:origin-left">Learn More</span>
-                  <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-2 transition-transform duration-300" />
+                  <motion.span
+                    className="inline-block"
+                    whileHover={{ x: 6 }}
+                    transition={{ type: "spring", stiffness: 400, damping: 20 }}
+                  >
+                    <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1.5 transition-transform duration-300" />
+                  </motion.span>
                 </a>
               </div>
             </motion.div>

@@ -123,7 +123,7 @@ export default function Industries() {
                 <h3 className="text-xl font-extrabold text-white mb-3 group-hover:text-cyan-300 transition-colors">
                   {industry.title}
                 </h3>
-                <p className="text-slate-300 leading-relaxed text-sm">
+                <p className="text-slate-300 leading-relaxed text-sm lg:text-base">
                   {industry.description}
                 </p>
               </div>
@@ -188,7 +188,7 @@ export default function Industries() {
               <h3 className="text-lg font-extrabold text-white mb-2 group-hover:text-cyan-300 transition-colors">
                 {step.title}
               </h3>
-              <p className="text-slate-300 text-xs leading-relaxed">
+              <p className="text-slate-300 text-sm lg:text-base leading-relaxed">
                 {step.description}
               </p>
             </motion.div>

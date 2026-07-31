@@ -93,20 +93,31 @@ export default function Hero() {
 
       {/* Slow-drifting gradient light orbs */}
       <motion.div
-        className="absolute top-1/4 left-10 w-[450px] h-[450px] bg-indigo-600/25 rounded-full blur-[130px] pointer-events-none z-10"
+        className="absolute top-1/4 left-10 w-[500px] h-[500px] bg-indigo-600/30 rounded-full blur-[140px] pointer-events-none z-10"
         animate={{ x: [0, 40, -20, 0], y: [0, -30, 20, 0] }}
         transition={{ duration: 18, repeat: Infinity, ease: "easeInOut" }}
       />
       <motion.div
-        className="absolute bottom-1/4 right-10 w-[450px] h-[450px] bg-cyan-500/20 rounded-full blur-[130px] pointer-events-none z-10"
+        className="absolute bottom-1/4 right-10 w-[500px] h-[500px] bg-cyan-500/25 rounded-full blur-[140px] pointer-events-none z-10"
         animate={{ x: [0, -35, 25, 0], y: [0, 25, -20, 0] }}
         transition={{ duration: 22, repeat: Infinity, ease: "easeInOut", delay: 2 }}
       />
       <motion.div
-        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] bg-purple-600/10 rounded-full blur-[100px] pointer-events-none z-10"
-        animate={{ scale: [1, 1.3, 1], opacity: [0.4, 0.7, 0.4] }}
+        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[380px] h-[380px] bg-purple-600/15 rounded-full blur-[110px] pointer-events-none z-10"
+        animate={{ scale: [1, 1.35, 1], opacity: [0.4, 0.75, 0.4] }}
         transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }}
       />
+
+      {/* Animated diagonal gradient stripe overlay — adds premium depth */}
+      <motion.div
+        className="absolute inset-0 z-10 pointer-events-none"
+        style={{
+          background: "linear-gradient(125deg, rgba(79,70,229,0.08) 0%, transparent 40%, rgba(0,212,255,0.06) 70%, transparent 100%)",
+        }}
+        animate={{ opacity: [0.6, 1, 0.6] }}
+        transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
+      />
+
 
       {/* Floating Background Particles */}
       <div className="absolute inset-0 pointer-events-none z-10 overflow-hidden">
@@ -142,38 +153,45 @@ export default function Hero() {
           </span>
         </motion.div>
 
-        {/* Staggered word-by-word heading reveal */}
-        <motion.h1
-          variants={sentenceVariants}
-          initial="hidden"
-          animate="visible"
-          className="text-6xl md:text-7xl lg:text-8xl font-extrabold text-white mb-8 tracking-[-2px] leading-[1.05] drop-shadow-2xl"
-        >
-          {["Enterprise"].map((w) => (
-            <motion.span key={w} variants={wordVariants} className="inline-block mr-[0.25em]">{w}</motion.span>
-          ))}
-          <motion.span
-            variants={wordVariants}
-            className="inline-block mr-[0.25em] text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 via-purple-400 to-cyan-400"
-          >
-            Intelligence
-          </motion.span>
-          <br />
-          {["Redefined"].map((w) => (
-            <motion.span key={w} variants={wordVariants} className="inline-block">{w}</motion.span>
-          ))}
-        </motion.h1>
+        {/* Radial glow halo behind the headline — the 10/10 "wow" touch */}
+        <div className="relative inline-block mb-8">
+          <div className="absolute inset-0 -m-12 bg-[radial-gradient(ellipse_at_center,rgba(99,102,241,0.2)_0%,transparent_70%)] blur-2xl pointer-events-none" />
 
-        {/* Subtitle */}
+          {/* Staggered word-by-word heading reveal */}
+          <motion.h1
+            variants={sentenceVariants}
+            initial="hidden"
+            animate="visible"
+            className="text-6xl md:text-7xl lg:text-8xl font-extrabold text-white tracking-[-2px] leading-[1.05] drop-shadow-2xl relative z-10"
+          >
+            {["Enterprise"].map((w) => (
+              <motion.span key={w} variants={wordVariants} className="inline-block mr-[0.25em]">{w}</motion.span>
+            ))}
+            <motion.span
+              variants={wordVariants}
+              className="inline-block mr-[0.25em] text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 via-purple-400 to-cyan-400"
+            >
+              Intelligence
+            </motion.span>
+            <br />
+            {["Redefined"].map((w) => (
+              <motion.span key={w} variants={wordVariants} className="inline-block">{w}</motion.span>
+            ))}
+          </motion.h1>
+        </div>
+
+
+        {/* Subtitle — larger for better readability on big screens */}
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.65 }}
-          className="text-lg md:text-2xl text-slate-200 mb-12 max-w-3xl mx-auto leading-relaxed font-normal drop-shadow-md"
+          className="text-xl md:text-2xl lg:text-[1.4rem] text-slate-200 mb-12 max-w-3xl mx-auto leading-relaxed font-light drop-shadow-md tracking-wide"
         >
           Delivering precision AI solutions, robust cybersecurity, and elite IT
           staffing for modern Fortune 500 enterprises.
         </motion.p>
+
 
         {/* Magnetic CTA Buttons */}
         <motion.div
@@ -184,7 +202,7 @@ export default function Hero() {
         >
           <MagneticButton
             onClick={() => scrollTo("#services")}
-            className="w-full sm:w-auto bg-gradient-to-r from-indigo-600 via-purple-600 to-cyan-500 text-white px-10 py-5 rounded-[14px] font-extrabold text-base transition-all duration-300 shadow-[0_10px_40px_rgba(79,70,229,0.5)] hover:shadow-[0_15px_55px_rgba(0,212,255,0.8)] flex items-center justify-center gap-2 group cursor-pointer"
+            className="w-full sm:w-auto bg-gradient-to-r from-indigo-600 via-purple-600 to-cyan-500 text-white px-10 py-5 rounded-[14px] font-extrabold text-base transition-all duration-300 shadow-[0_10px_40px_rgba(79,70,229,0.55)] hover:shadow-[0_20px_60px_rgba(0,212,255,0.9)] hover:scale-[1.02] flex items-center justify-center gap-2 group cursor-pointer"
           >
             <span>Explore Solutions</span>
             <ArrowRight className="w-5 h-5 group-hover:translate-x-1.5 transition-transform duration-300" />
@@ -192,11 +210,12 @@ export default function Hero() {
 
           <MagneticButton
             onClick={() => scrollTo("#contact")}
-            className="w-full sm:w-auto bg-white/10 backdrop-blur-xl border border-white/30 text-white px-10 py-5 rounded-[14px] font-extrabold text-base transition-all duration-300 hover:bg-white/20 hover:border-white/60 flex items-center justify-center gap-2 cursor-pointer"
+            className="w-full sm:w-auto bg-white/10 backdrop-blur-xl border border-white/30 text-white px-10 py-5 rounded-[14px] font-extrabold text-base transition-all duration-300 hover:bg-white/20 hover:border-cyan-400/60 hover:shadow-[0_10px_40px_rgba(0,212,255,0.25)] hover:scale-[1.02] flex items-center justify-center gap-2 cursor-pointer"
           >
             <Zap className="w-5 h-5 text-cyan-400" />
             <span>Partner With Us</span>
           </MagneticButton>
+
         </motion.div>
 
         {/* Hero Trust Badges */}
