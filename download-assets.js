@@ -6,32 +6,21 @@ import http from "http";
 const ROOT = process.cwd();
 
 const assets = [
-  // Founder
-  { url: "https://www.enfycon.com/images/team/founder2.jpeg", dest: "client/public/images/team/founder2.jpeg" },
-
-  // History
-  { url: "https://www.enfycon.com/images/history/history-inception.png", dest: "client/public/images/history/history-inception.png" },
-  { url: "https://www.enfycon.com/images/history/history-foundation.png", dest: "client/public/images/history/history-foundation.png" },
-  { url: "https://www.enfycon.com/images/history/history-expansion.png", dest: "client/public/images/history/history-expansion.png" },
-  { url: "https://www.enfycon.com/images/history/history-innovation.png", dest: "client/public/images/history/history-innovation.png" },
-  { url: "https://www.enfycon.com/images/history/history-partnerships.png", dest: "client/public/images/history/history-partnerships.png" },
-
-  // Shapes
-  { url: "https://www.enfycon.com/images/shape/h7-testimonial-shape-blur.svg", dest: "client/public/images/shape/h7-testimonial-shape-blur.svg" },
-
-  // CSR
-  { url: "https://www.enfycon.com/images/csr/food-dist.jpeg", dest: "client/public/images/csr/food-dist.jpeg" },
-  { url: "https://www.enfycon.com/images/csr/clothes-distribution-1.jpg", dest: "client/public/images/csr/clothes-distribution-1.jpg" },
-  { url: "https://www.enfycon.com/images/csr/scholarship.jpg", dest: "client/public/images/csr/scholarship.jpg" },
-  { url: "https://www.enfycon.com/images/csr/vol.jpg", dest: "client/public/images/csr/vol.jpg" },
-
-  // Locations
-  { url: "https://www.enfycon.com/images/locations/texas.png", dest: "client/public/images/locations/texas.png" },
-  { url: "https://www.enfycon.com/images/locations/ohio.png", dest: "client/public/images/locations/ohio.png" },
-  { url: "https://www.enfycon.com/images/locations/delaware.png", dest: "client/public/images/locations/delaware.png" },
-  { url: "https://www.enfycon.com/images/locations/bhubaneswar.jpg", dest: "client/public/images/locations/bhubaneswar.jpg" },
-  { url: "https://www.enfycon.com/images/locations/visakhapatnam.jpg", dest: "client/public/images/locations/visakhapatnam.jpg" },
-  { url: "https://www.enfycon.com/images/locations/hyderabad.jpg", dest: "client/public/images/locations/hyderabad.jpg" },
+  { url: "https://wp.enfycon.com/wp-content/uploads/2026/07/ChatGPT-Image-Jul-27-2026-02_07_14-PM.png", dest: "client/public/images/blog/blog-1.png" },
+  { url: "https://wp.enfycon.com/wp-content/uploads/2026/07/ChatGPT-Image-Jul-23-2026-02_17_54-PM-1.png", dest: "client/public/images/blog/blog-2.png" },
+  { url: "https://wp.enfycon.com/wp-content/uploads/2026/05/ChatGPT-Image-May-20-2026-03_05_05-PM.png", dest: "client/public/images/blog/blog-3.png" },
+  { url: "https://wp.enfycon.com/wp-content/uploads/2026/05/ChatGPT-Image-May-19-2026-10_12_47-AM.png", dest: "client/public/images/blog/blog-4.png" },
+  { url: "https://wp.enfycon.com/wp-content/uploads/2026/05/ChatGPT-Image-May-4-2026-04_57_57-PM.png", dest: "client/public/images/blog/blog-5.png" },
+  { url: "https://wp.enfycon.com/wp-content/uploads/2026/04/Gemini_Generated_Image_9fcdnv9fcdnv9fcd-scaled.png", dest: "client/public/images/blog/blog-6.png" },
+  { url: "https://wp.enfycon.com/wp-content/uploads/2026/04/ChatGPT-Image-Apr-2-2026-11_33_08-AM.png", dest: "client/public/images/blog/blog-7.png" },
+  { url: "https://wp.enfycon.com/wp-content/uploads/2026/03/ChatGPT-Image-Mar-30-2026-01_30_52-PM.png", dest: "client/public/images/blog/blog-8.png" },
+  { url: "https://wp.enfycon.com/wp-content/uploads/2026/03/ChatGPT-Image-Mar-19-2026-02_07_17-PM.png", dest: "client/public/images/blog/blog-9.png" },
+  { url: "https://wp.enfycon.com/wp-content/uploads/2026/03/ChatGPT-Image-Mar-17-2026-12_23_26-PM.png", dest: "client/public/images/blog/blog-10.png" },
+  { url: "https://wp.enfycon.com/wp-content/uploads/2026/03/ChatGPT-Image-Mar-17-2026-12_02_52-PM.png", dest: "client/public/images/blog/blog-11.png" },
+  { url: "https://wp.enfycon.com/wp-content/uploads/2026/03/ChatGPT-Image-Mar-16-2026-03_33_20-PM.png", dest: "client/public/images/blog/blog-12.png" },
+  { url: "https://www.enfycon.com/images/blog/blogs-backdrop.jpg", dest: "client/public/images/blog/blogs-backdrop.jpg" },
+  { url: "https://wp.enfycon.com/wp-content/uploads/2026/03/ChatGPT-Image-Mar-10-2026-04_54_37-PM.png", dest: "client/public/images/blog/blog-14.png" },
+  { url: "https://wp.enfycon.com/wp-content/uploads/2026/03/ChatGPT-Image-Mar-10-2026-12_38_01-PM.png", dest: "client/public/images/blog/blog-15.png" },
 ];
 
 function downloadFile(fileUrl, destPath) {
@@ -66,7 +55,7 @@ function downloadFile(fileUrl, destPath) {
 }
 
 async function run() {
-  console.log(`Starting download of ${assets.length} new portfolio assets...`);
+  console.log(`Starting download of ${assets.length} blog assets...`);
   for (const asset of assets) {
     await downloadFile(asset.url, asset.dest);
   }
