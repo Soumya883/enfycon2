@@ -94,11 +94,13 @@ export default function Hero() {
       {/* Slow-drifting gradient light orbs */}
       <motion.div
         className="absolute top-1/4 left-10 w-[500px] h-[500px] bg-indigo-600/30 rounded-full blur-[140px] pointer-events-none z-10"
+        style={{ willChange: "transform, opacity" }}
         animate={{ x: [0, 40, -20, 0], y: [0, -30, 20, 0] }}
         transition={{ duration: 18, repeat: Infinity, ease: "easeInOut" }}
       />
       <motion.div
         className="absolute bottom-1/4 right-10 w-[500px] h-[500px] bg-cyan-500/25 rounded-full blur-[140px] pointer-events-none z-10"
+        style={{ willChange: "transform, opacity" }}
         animate={{ x: [0, -35, 25, 0], y: [0, 25, -20, 0] }}
         transition={{ duration: 22, repeat: Infinity, ease: "easeInOut", delay: 2 }}
       />
