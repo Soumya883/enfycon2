@@ -10,28 +10,28 @@ const brands = [
 
 export default function BrandCarousel() {
   return (
-    <section className="py-20 bg-background border-y border-border/50 overflow-hidden">
+    <section className="py-24 bg-white border-y border-gray-100 overflow-hidden">
       <div className="container">
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-10"
+          className="text-center mb-14"
         >
-          <p className="text-sm uppercase tracking-[0.3em] text-muted-foreground font-semibold">
+          <p className="text-xs md:text-sm uppercase tracking-[0.35em] text-gray-500 font-bold">
             Trusted by Innovative Enterprises
           </p>
-          <div className="w-16 h-0.5 bg-primary/50 mx-auto mt-4" />
+          <div className="w-20 h-1 bg-primary/60 mx-auto mt-4 rounded-full" />
         </motion.div>
 
         {/* Auto-scrolling carousel strip */}
         <div className="relative">
           {/* Fade edges */}
-          <div className="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-background to-transparent z-10 pointer-events-none" />
-          <div className="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-background to-transparent z-10 pointer-events-none" />
+          <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none" />
+          <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none" />
 
-          <div className="flex overflow-hidden">
+          <div className="flex overflow-hidden py-4">
             <motion.div
               animate={{ x: ["0%", "-50%"] }}
               transition={{
@@ -39,15 +39,15 @@ export default function BrandCarousel() {
                 repeat: Infinity,
                 ease: "linear",
               }}
-              className="flex items-center gap-12 md:gap-20 shrink-0"
+              className="flex items-center gap-16 md:gap-28 shrink-0"
             >
               {/* Duplicate set for seamless loop */}
               {[...brands, ...brands, ...brands, ...brands].map((brand, i) => (
-                <div key={i} className="group shrink-0">
+                <div key={i} className="group shrink-0 flex items-center justify-center">
                   <img
                     src={brand.src}
                     alt={brand.alt}
-                    className="h-10 md:h-14 object-contain grayscale hover:grayscale-0 transition-all duration-500 opacity-70 hover:opacity-100"
+                    className="h-20 md:h-28 lg:h-32 w-auto max-w-[240px] md:max-w-[320px] object-contain mix-blend-multiply transition-all duration-300 transform group-hover:scale-110"
                     onError={(e) => {
                       (e.currentTarget as HTMLImageElement).src = brand.fallback;
                     }}
