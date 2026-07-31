@@ -85,10 +85,10 @@ export default function Hero() {
         </video>
       </motion.div>
 
-      {/* Dark Overlay */}
+      {/* Dark Overlay — slightly darker for crisper text readability */}
       <div
         className="absolute top-0 left-0 w-full h-full z-10 pointer-events-none"
-        style={{ background: "linear-gradient(rgba(8,12,30,.82), rgba(8,12,30,.75))" }}
+        style={{ background: "linear-gradient(rgba(8,12,30,.88), rgba(8,12,30,.82))" }}
       />
 
       {/* Slow-drifting gradient light orbs */}

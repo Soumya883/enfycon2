@@ -159,7 +159,14 @@ export default function Industries() {
 
         <div className="relative grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Animated Horizontal Connecting Line (Desktop) */}
-          <div className="hidden lg:block absolute top-1/2 left-0 right-0 h-0.5 bg-gradient-to-r from-indigo-500 via-purple-500 to-cyan-400 -translate-y-1/2 z-0 opacity-30" />
+          <motion.div
+            initial={{ scaleX: 0 }}
+            whileInView={{ scaleX: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1], delay: 0.3 }}
+            style={{ transformOrigin: "left" }}
+            className="hidden lg:block absolute top-[52px] left-[60px] right-[60px] h-0.5 bg-gradient-to-r from-indigo-500 via-purple-500 to-cyan-400 z-0 opacity-50"
+          />
 
           {processSteps.map((step, i) => (
             <motion.div
