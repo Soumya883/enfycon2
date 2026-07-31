@@ -9,10 +9,12 @@ import FAQ from "@/components/FAQ";
 import Testimonials from "@/components/Testimonials";
 import ContactForm from "@/components/ContactForm";
 import Footer from "@/components/Footer";
+import ScrollProgressBar from "@/components/ScrollProgressBar";
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-background text-foreground">
+    <div className="min-h-screen bg-[#F8FAFC] text-slate-900 selection:bg-indigo-500 selection:text-white font-sans">
+      <ScrollProgressBar />
       <Navbar />
       <Hero />
       <BrandCarousel />

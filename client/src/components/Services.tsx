@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ArrowRight, Bot, Shield, Users, RefreshCw, MessageSquare, Cpu, Share2 } from "lucide-react";
+import { ArrowRight, Bot, Shield, Users, RefreshCw, MessageSquare, Cpu, Share2, Sparkles } from "lucide-react";
 
 const services = [
   {
@@ -9,7 +9,7 @@ const services = [
     fallback: "https://www.enfycon.com/images/service/ai-agentic-solutions.jpg",
     slug: "ai-agentic-solutions",
     icon: Bot,
-    color: "from-violet-500 to-purple-600",
+    color: "from-indigo-600 to-purple-600",
   },
   {
     title: "AI-First Platforms",
@@ -18,7 +18,7 @@ const services = [
     fallback: "https://www.enfycon.com/images/service/ai-first-platforms.jpg",
     slug: "ai-first-platforms",
     icon: Cpu,
-    color: "from-blue-500 to-indigo-600",
+    color: "from-blue-600 to-cyan-600",
   },
   {
     title: "Cybersecurity Assessment",
@@ -27,7 +27,7 @@ const services = [
     fallback: "https://www.enfycon.com/images/service/security-assessment.jpg",
     slug: "cybersecurity",
     icon: Shield,
-    color: "from-emerald-500 to-teal-600",
+    color: "from-emerald-600 to-teal-600",
   },
   {
     title: "Enterprise Modernization",
@@ -36,7 +36,7 @@ const services = [
     fallback: "https://www.enfycon.com/images/service/enterprise-modernization.jpg",
     slug: "enterprise-modernization",
     icon: RefreshCw,
-    color: "from-orange-500 to-amber-600",
+    color: "from-amber-600 to-orange-600",
   },
   {
     title: "US IT Staffing",
@@ -45,7 +45,7 @@ const services = [
     fallback: "https://www.enfycon.com/images/service/us-it-staffing.png",
     slug: "it-staffing",
     icon: Users,
-    color: "from-rose-500 to-pink-600",
+    color: "from-rose-600 to-pink-600",
   },
   {
     title: "Personalized Customer Engagement",
@@ -54,34 +54,16 @@ const services = [
     fallback: "https://www.enfycon.com/images/service/personalized-customer-engagement.jpg",
     slug: "customer-engagement",
     icon: MessageSquare,
-    color: "from-cyan-500 to-blue-600",
-  },
-  {
-    title: "Social Media & Digital Strategy",
-    description: "Data-driven social marketing and targeted campaign management to build strong brand presence.",
-    image: "/images/service/social-media-marketing.jpg",
-    fallback: "https://www.enfycon.com/images/service/social-media-marketing.jpg",
-    slug: "social-media-marketing",
-    icon: Share2,
-    color: "from-pink-500 to-rose-600",
+    color: "from-cyan-600 to-blue-600",
   },
 ];
 
-const containerVariants = {
-  hidden: {},
-  visible: { transition: { staggerChildren: 0.12 } },
-};
-
-const itemVariants = {
-  hidden: { opacity: 0, y: 40 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
-};
-
 export default function Services() {
   return (
-    <section id="services" className="py-28 bg-gray-50 relative overflow-hidden">
-      {/* Subtle background gradient */}
-      <div className="absolute inset-0 bg-gradient-to-br from-blue-50/60 via-transparent to-purple-50/40 pointer-events-none" />
+    <section id="services" className="py-28 lg:py-36 bg-[#F8FAFC] relative overflow-hidden">
+      {/* Background Decorators */}
+      <div className="absolute top-0 right-0 w-96 h-96 bg-indigo-500/5 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute bottom-0 left-0 w-96 h-96 bg-cyan-500/5 rounded-full blur-3xl pointer-events-none" />
 
       <div className="container relative z-10">
         <motion.div
@@ -89,65 +71,73 @@ export default function Services() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="mb-16 md:w-2/3"
+          className="mb-20 text-center max-w-3xl mx-auto"
         >
-          <p className="text-blue-600 font-semibold tracking-[0.2em] uppercase text-sm mb-3">
-            Our Capabilities
-          </p>
-          <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-6">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-indigo-50 border border-indigo-100 text-indigo-700 text-xs font-extrabold uppercase tracking-widest mb-4">
+            <Sparkles className="w-3.5 h-3.5 text-indigo-600" />
+            Our Core Capabilities
+          </div>
+          <h2 className="text-4xl md:text-6xl font-extrabold text-slate-900 mb-6 tracking-tight">
             Bridging the Technical Gap{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">with Precision</span>
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 via-purple-600 to-cyan-500">
+              with Precision
+            </span>
           </h2>
-          <p className="text-gray-600 text-lg leading-relaxed max-w-2xl">
-            We deliver end-to-end solutions that transform your business operations through advanced AI, impenetrable security, and world-class engineering talent.
+          <p className="text-slate-600 text-base md:text-lg leading-relaxed">
+            End-to-end solutions that transform enterprise operations through advanced AI, impenetrable security, and world-class engineering talent.
           </p>
         </motion.div>
 
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-50px" }}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
-        >
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10">
           {services.map((service, i) => (
             <motion.div
               key={i}
-              variants={itemVariants}
-              className="group relative bg-white rounded-2xl border border-gray-200 overflow-hidden hover:border-blue-200 transition-all duration-500 hover:shadow-[0_20px_60px_rgba(59,130,246,0.1)] flex flex-col"
-              whileHover={{ y: -6, transition: { duration: 0.3 } }}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: i * 0.08 }}
+              whileHover={{ y: -12 }}
+              className="group bg-white rounded-[20px] border border-slate-200/80 overflow-hidden transition-all duration-500 hover:border-indigo-400 hover:shadow-[0_30px_70px_rgba(79,70,229,0.12)] flex flex-col"
             >
-              <div className="h-52 overflow-hidden relative">
+              {/* Image Container with 1.08 Scale */}
+              <div className="h-56 overflow-hidden relative bg-slate-100">
                 <img
                   src={service.image}
                   alt={service.title}
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out"
+                  className="w-full h-full object-cover group-hover:scale-[1.08] transition-transform duration-700 ease-out"
                   onError={(e) => { (e.currentTarget as HTMLImageElement).src = service.fallback; }}
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
-                {/* Icon badge */}
-                <div className={`absolute top-4 left-4 w-10 h-10 rounded-xl bg-gradient-to-br ${service.color} flex items-center justify-center shadow-lg opacity-90 group-hover:opacity-100 group-hover:scale-110 transition-all duration-300`}>
-                  <service.icon className="w-5 h-5 text-white" />
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-slate-950/20 to-transparent" />
+                
+                {/* Floating Icon */}
+                <div className={`absolute top-4 left-4 w-12 h-12 rounded-[14px] bg-gradient-to-br ${service.color} flex items-center justify-center shadow-lg text-white group-hover:scale-110 transition-transform duration-300`}>
+                  <service.icon className="w-6 h-6" />
                 </div>
               </div>
-              <div className="p-7 flex flex-col flex-grow">
-                <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-blue-700 transition-colors duration-300">
-                  {service.title}
-                </h3>
-                <p className="text-gray-600 mb-6 flex-grow leading-relaxed text-sm">
-                  {service.description}
-                </p>
+
+              {/* Card Body */}
+              <div className="p-8 flex flex-col flex-grow justify-between">
+                <div>
+                  <h3 className="text-xl font-extrabold text-slate-900 mb-3 group-hover:text-indigo-600 transition-colors duration-300 leading-snug">
+                    {service.title}
+                  </h3>
+                  <p className="text-slate-600 mb-8 leading-relaxed text-sm">
+                    {service.description}
+                  </p>
+                </div>
+
+                {/* Animated Learn More Button */}
                 <a
                   href={`/services#${service.slug}`}
-                  className="inline-flex items-center text-blue-600 font-semibold text-sm hover:text-blue-800 transition-colors mt-auto group/link"
+                  className="inline-flex items-center gap-2 text-indigo-600 font-extrabold text-sm hover:text-indigo-800 transition-colors group/btn mt-auto"
                 >
-                  Learn More
-                  <ArrowRight className="ml-2 w-4 h-4 group-hover/link:translate-x-1.5 transition-transform duration-300" />
+                  <span>Learn More</span>
+                  <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-2 transition-transform duration-300" />
                 </a>
               </div>
             </motion.div>
           ))}
-        </motion.div>
+        </div>
       </div>
     </section>
   );
