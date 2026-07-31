@@ -5,6 +5,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import { HelpCircle } from "lucide-react";
 
 const faqs = [
   {
@@ -41,22 +42,22 @@ const faqs = [
 
 export default function FAQ() {
   return (
-    <section className="py-24 bg-white relative border-t border-gray-100">
-      <div className="container">
+    <section className="py-32 lg:py-40 bg-white relative overflow-hidden">
+      <div className="container relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           {/* Left - Image */}
           <motion.div
-            initial={{ opacity: 0, x: -30 }}
+            initial={{ opacity: 0, x: -40 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.7 }}
+            transition={{ duration: 0.8 }}
             className="relative"
           >
-            <div className="rounded-3xl overflow-hidden shadow-xl border border-gray-100">
+            <div className="rounded-[22px] overflow-hidden shadow-[0_20px_60px_rgba(0,0,0,0.08)] border border-slate-200/80">
               <img
                 src="/images/faq/faq.jpg"
                 alt="FAQ"
-                className="w-full h-[520px] object-cover"
+                className="w-full h-[540px] object-cover"
                 onError={(e) => { (e.currentTarget as HTMLImageElement).src = "https://www.enfycon.com/images/faq/faq.jpg"; }}
               />
             </div>
@@ -64,30 +65,30 @@ export default function FAQ() {
 
           {/* Right - FAQ Accordion */}
           <motion.div
-            initial={{ opacity: 0, x: 30 }}
+            initial={{ opacity: 0, x: 40 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.7, delay: 0.2 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
           >
-            <p className="text-primary font-bold tracking-[0.2em] uppercase text-xs mb-3">
-              FAQ
-            </p>
-            <h2 className="text-3xl md:text-4xl font-extrabold text-gray-900 mb-8">
-              Frequently Asked{" "}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">Questions</span>
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-indigo-50 border border-indigo-100 text-indigo-700 text-xs font-extrabold uppercase tracking-widest mb-4">
+              <HelpCircle className="w-3.5 h-3.5 text-indigo-600" />
+              Frequently Asked Questions
+            </div>
+            <h2 className="text-4xl md:text-5xl font-extrabold text-slate-900 mb-8 tracking-tight">
+              Got Questions? <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 via-purple-600 to-cyan-500">We Have Answers.</span>
             </h2>
 
-            <Accordion type="single" collapsible className="w-full space-y-3">
+            <Accordion type="single" collapsible className="w-full space-y-4">
               {faqs.map((faq, i) => (
                 <AccordionItem
                   key={i}
                   value={`faq-${i}`}
-                  className="border border-gray-200 rounded-2xl px-6 data-[state=open]:border-primary/40 data-[state=open]:bg-blue-50/40 transition-all duration-300 shadow-sm"
+                  className="border border-slate-200/80 rounded-[16px] px-6 data-[state=open]:border-indigo-400 data-[state=open]:bg-indigo-50/40 transition-all duration-300 shadow-sm"
                 >
-                  <AccordionTrigger className="text-gray-900 hover:text-primary text-left font-bold text-base py-5">
+                  <AccordionTrigger className="text-slate-900 hover:text-indigo-600 text-left font-extrabold text-base py-5 no-underline hover:no-underline">
                     {faq.question}
                   </AccordionTrigger>
-                  <AccordionContent className="text-gray-600 leading-relaxed text-sm pb-5">
+                  <AccordionContent className="text-slate-600 leading-relaxed text-sm pb-5">
                     {faq.answer}
                   </AccordionContent>
                 </AccordionItem>

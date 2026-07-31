@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ArrowRight, Sparkles, ShieldCheck, Zap } from "lucide-react";
+import { ArrowRight, Sparkles, ShieldCheck, Zap, Star, Rocket, Lock } from "lucide-react";
 
 const particleDots = Array.from({ length: 18 });
 
@@ -10,7 +10,7 @@ export default function Hero() {
   };
 
   return (
-    <section className="relative min-h-[92vh] lg:min-h-screen w-full flex items-center justify-center overflow-hidden bg-[#080c1e] py-28 lg:py-36">
+    <section className="relative min-h-[92vh] lg:min-h-screen w-full flex items-center justify-center overflow-hidden bg-[#080c1e] py-32 lg:py-40">
       {/* Background Video */}
       <video
         autoPlay
@@ -130,20 +130,24 @@ export default function Hero() {
           </motion.div>
         </motion.div>
 
-        {/* Feature Badges Below Buttons */}
+        {/* Hero Trust Badges per Spec */}
         <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1, duration: 0.6 }}
-          className="flex flex-wrap items-center justify-center gap-8 mt-16 text-xs text-slate-300 font-semibold"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.9, duration: 0.6 }}
+          className="flex flex-wrap items-center justify-center gap-4 sm:gap-6 mt-16 text-xs text-slate-200 font-extrabold"
         >
-          <div className="flex items-center gap-2 bg-slate-900/60 backdrop-blur-md px-4 py-2 rounded-full border border-slate-800">
-            <ShieldCheck className="w-4 h-4 text-emerald-400" />
-            <span>ISO 27001 & SOC2 Certified</span>
+          <div className="flex items-center gap-2 bg-slate-900/80 backdrop-blur-xl px-5 py-2.5 rounded-full border border-slate-700/80 shadow-lg hover:border-amber-400/50 transition-colors">
+            <Star className="w-4 h-4 fill-amber-400 text-amber-400" />
+            <span>Trusted by 200+ Businesses</span>
           </div>
-          <div className="flex items-center gap-2 bg-slate-900/60 backdrop-blur-md px-4 py-2 rounded-full border border-slate-800">
-            <Zap className="w-4 h-4 text-amber-400" />
-            <span>Sub-Second Response Latency</span>
+          <div className="flex items-center gap-2 bg-slate-900/80 backdrop-blur-xl px-5 py-2.5 rounded-full border border-slate-700/80 shadow-lg hover:border-cyan-400/50 transition-colors">
+            <Rocket className="w-4 h-4 text-cyan-400" />
+            <span>500+ Successful Projects</span>
+          </div>
+          <div className="flex items-center gap-2 bg-slate-900/80 backdrop-blur-xl px-5 py-2.5 rounded-full border border-slate-700/80 shadow-lg hover:border-emerald-400/50 transition-colors">
+            <Lock className="w-4 h-4 text-emerald-400" />
+            <span>Enterprise-Grade Security</span>
           </div>
         </motion.div>
       </div>
