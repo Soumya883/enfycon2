@@ -5,7 +5,7 @@ const testimonials = [
   {
     name: "Sarah Mitchell",
     role: "CTO, FinEdge Corp",
-    avatar: "/manus-storage/user-avatar_e4a96233.png",
+    avatar: "https://www.enfycon.com/_next/image?url=%2Fimages%2Ftestimonial%2Fuser-avatar.png&w=256&q=85",
     content:
       "Enfycon transformed our entire data infrastructure. Their AI solutions reduced our processing time by 80% and the cybersecurity assessment gave us confidence we never had before.",
     rating: 5,
@@ -13,7 +13,7 @@ const testimonials = [
   {
     name: "David Chen",
     role: "VP Engineering, MedTech Solutions",
-    avatar: "/manus-storage/user-avatar_e4a96233.png",
+    avatar: "https://www.enfycon.com/_next/image?url=%2Fimages%2Ftestimonial%2Fuser-avatar.png&w=256&q=85",
     content:
       "The IT staffing team found us senior engineers in under two weeks. The quality of talent was exceptional — every candidate was pre-vetted and perfectly matched to our needs.",
     rating: 5,
@@ -21,7 +21,7 @@ const testimonials = [
   {
     name: "Rachel Torres",
     role: "Director of Digital, Global Retail Inc",
-    avatar: "/manus-storage/user-avatar_e4a96233.png",
+    avatar: "https://www.enfycon.com/_next/image?url=%2Fimages%2Ftestimonial%2Fuser-avatar.png&w=256&q=85",
     content:
       "Their enterprise modernization project migrated us from legacy systems to cloud-native in 4 months. The ROI has been incredible and our team productivity skyrocketed.",
     rating: 5,
@@ -34,7 +34,7 @@ export default function Testimonials() {
       {/* Subtle background */}
       <div className="absolute inset-0 opacity-[0.02]">
         <img
-          src="/manus-storage/testimonial-img_5c69e47a.webp"
+          src="https://www.enfycon.com/_next/image?url=%2Fimages%2Ftestimonial%2Ftestimonial-img.webp&w=1200&q=85"
           alt=""
           className="w-full h-full object-cover"
         />

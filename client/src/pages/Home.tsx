@@ -4,6 +4,7 @@ import BrandCarousel from "@/components/BrandCarousel";
 import Services from "@/components/Services";
 import About from "@/components/About";
 import Industries from "@/components/Industries";
+import LatestInsights from "@/components/LatestInsights";
 import FAQ from "@/components/FAQ";
 import Testimonials from "@/components/Testimonials";
 import ContactForm from "@/components/ContactForm";
@@ -18,6 +19,7 @@ export default function Home() {
       <Services />
       <About />
       <Industries />
+      <LatestInsights />
       <FAQ />
       <Testimonials />
       <ContactForm />

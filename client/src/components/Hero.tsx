@@ -17,7 +17,7 @@ export default function Hero() {
         className="absolute top-0 left-0 w-full h-full object-cover z-0"
       >
         <source
-          src="/manus-storage/hero-video_0f84c0a5.mp4"
+          src="https://www.enfycon.com/video/ENFYCON%20VIDEO%20HERO.mp4"
           type="video/mp4"
         />
       </video>

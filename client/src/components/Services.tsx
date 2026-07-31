@@ -1,11 +1,11 @@
 import { motion } from "framer-motion";
-import { ArrowRight, Bot, Shield, Users, RefreshCw, MessageSquare, Cpu } from "lucide-react";
+import { ArrowRight, Bot, Shield, Users, RefreshCw, MessageSquare, Cpu, Share2 } from "lucide-react";
 
 const services = [
   {
     title: "AI Agentic Solutions",
     description: "Autonomous AI agents designed to optimize complex enterprise workflows and decision-making processes.",
-    image: "/manus-storage/ai-agentic-solutions_0f99ba61.jpg",
+    image: "https://www.enfycon.com/_next/image?url=%2Fimages%2Fservice%2Fai-agentic-solutions.jpg&w=640&q=85",
     slug: "ai-agentic-solutions",
     icon: Bot,
     color: "from-violet-500 to-purple-600",
@@ -13,7 +13,7 @@ const services = [
   {
     title: "AI-First Platforms",
     description: "Build robust, scalable platforms with artificial intelligence at their core, not as an afterthought.",
-    image: "/manus-storage/ai-first-platforms_4e59186b.jpg",
+    image: "https://www.enfycon.com/_next/image?url=%2Fimages%2Fservice%2Fai-first-platforms.jpg&w=640&q=85",
     slug: "ai-first-platforms",
     icon: Cpu,
     color: "from-blue-500 to-indigo-600",
@@ -21,7 +21,7 @@ const services = [
   {
     title: "Cybersecurity Assessment",
     description: "Comprehensive security audits and penetration testing to fortify your digital infrastructure.",
-    image: "/manus-storage/security-assessment_a738182e.jpg",
+    image: "https://www.enfycon.com/_next/image?url=%2Fimages%2Fservice%2Fsecurity-assessment.jpg&w=640&q=85",
     slug: "cybersecurity",
     icon: Shield,
     color: "from-emerald-500 to-teal-600",
@@ -29,7 +29,7 @@ const services = [
   {
     title: "Enterprise Modernization",
     description: "Upgrade legacy systems to cloud-native architectures for unprecedented agility and scale.",
-    image: "/manus-storage/enterprise-modernization_20a0ffbb.jpg",
+    image: "https://www.enfycon.com/_next/image?url=%2Fimages%2Fservice%2Fenterprise-modernization..jpg&w=640&q=85",
     slug: "enterprise-modernization",
     icon: RefreshCw,
     color: "from-orange-500 to-amber-600",
@@ -37,7 +37,7 @@ const services = [
   {
     title: "US IT Staffing",
     description: "Connect with elite IT professionals. We source top-tier talent for your most critical technical roles.",
-    image: "/manus-storage/us-it-staffing_77662f66.png",
+    image: "https://www.enfycon.com/_next/image?url=%2Fimages%2Fservice%2Fus-it-staffing.png&w=640&q=85",
     slug: "it-staffing",
     icon: Users,
     color: "from-rose-500 to-pink-600",
@@ -45,10 +45,18 @@ const services = [
   {
     title: "Personalized Customer Engagement",
     description: "Leverage AI to deliver hyper-personalized experiences that drive customer loyalty.",
-    image: "/manus-storage/personalized-customer-engagement_7501e706.jpg",
+    image: "https://www.enfycon.com/_next/image?url=%2Fimages%2Fservice%2Fpersonalized-customer-engagement.jpg&w=640&q=85",
     slug: "customer-engagement",
     icon: MessageSquare,
     color: "from-cyan-500 to-blue-600",
+  },
+  {
+    title: "Social Media & Digital Strategy",
+    description: "Data-driven social marketing and targeted campaign management to build strong brand presence.",
+    image: "https://www.enfycon.com/_next/image?url=%2Fimages%2Fservice%2Fsocial-media-marketing.jpg&w=640&q=85",
+    slug: "social-media-marketing",
+    icon: Share2,
+    color: "from-pink-500 to-rose-600",
   },
 ];
 

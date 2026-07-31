@@ -1,11 +1,11 @@
 import { motion } from "framer-motion";
 
 const brands = [
-  { src: "/manus-storage/gen-brand-1_c99b1a29.png", alt: "Partner 1" },
-  { src: "/manus-storage/gen-brand-2_160ce192.png", alt: "Partner 2" },
-  { src: "/manus-storage/gen-brand-3_c7ef35dd.png", alt: "Partner 3" },
-  { src: "/manus-storage/gen-brand-4_d8812478.png", alt: "Partner 4" },
-  { src: "/manus-storage/gen-brand-5_7912f700.png", alt: "Partner 5" },
+  { src: "https://www.enfycon.com/images/brands/gen-brand-1.png", alt: "Partner 1" },
+  { src: "https://www.enfycon.com/images/brands/gen-brand-2.png", alt: "Partner 2" },
+  { src: "https://www.enfycon.com/images/brands/gen-brand-3.png", alt: "Partner 3" },
+  { src: "https://www.enfycon.com/images/brands/gen-brand-4.png", alt: "Partner 4" },
+  { src: "https://www.enfycon.com/images/brands/gen-brand-5.png", alt: "Partner 5" },
 ];
 
 export default function BrandCarousel() {

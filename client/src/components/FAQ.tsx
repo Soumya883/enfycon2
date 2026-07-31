@@ -54,7 +54,7 @@ export default function FAQ() {
           >
             <div className="rounded-2xl overflow-hidden">
               <img
-                src="/manus-storage/faq_eb2f91f8.jpg"
+                src="https://www.enfycon.com/_next/image?url=%2Fimages%2Ffaq%2Ffaq.jpg&w=1200&q=75"
                 alt="FAQ"
                 className="w-full h-[520px] object-cover"
               />

@@ -13,7 +13,7 @@ export default function About() {
       {/* Background accent */}
       <div className="absolute top-0 left-0 w-1/3 h-full opacity-[0.03] pointer-events-none">
         <img
-          src="/manus-storage/pattern-3_82ab4001.svg"
+          src="https://www.enfycon.com/images/shape/pattern-3.svg"
           alt=""
           className="w-full h-full object-cover"
         />
@@ -31,7 +31,7 @@ export default function About() {
           >
             <div className="relative rounded-2xl overflow-hidden">
               <img
-                src="/manus-storage/about-us_88a1c2a2.jpg"
+                src="https://www.enfycon.com/_next/image?url=%2Fimages%2Fabout%2Fabout-us.jpg&w=1200&q=75"
                 alt="About Enfycon"
                 className="w-full h-[520px] object-cover"
               />
