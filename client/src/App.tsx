@@ -1,0 +1,70 @@
+import { Toaster } from "@/components/ui/sonner";
+import { TooltipProvider } from "@/components/ui/tooltip";
+import NotFound from "@/pages/NotFound";
+import { Route, Switch } from "wouter";
+import ErrorBoundary from "./components/ErrorBoundary";
+import { ThemeProvider } from "./contexts/ThemeContext";
+import PageTransition from "./components/PageTransition";
+import Home from "./pages/Home";
+import AboutPage from "./pages/AboutPage";
+import ServicesPage from "./pages/ServicesPage";
+import ContactPage from "./pages/ContactPage";
+import IndustriesPage from "./pages/IndustriesPage";
+import BlogPage from "./pages/BlogPage";
+import ProductsPage from "./pages/ProductsPage";
+import GCCPage from "./pages/GCCPage";
+import CulturePage from "./pages/CulturePage";
+import CSRPage from "./pages/CSRPage";
+import CareerPage from "./pages/CareerPage";
+import PrivacyPage from "./pages/PrivacyPage";
+import TermsPage from "./pages/TermsPage";
+import AdminPage from "./pages/AdminPage";
+import BlogDetailPage from "./pages/BlogDetailPage";
+import CaseStudiesPage from "./pages/CaseStudiesPage";
+import PricingPage from "./pages/PricingPage";
+import PortfolioPage from "./pages/PortfolioPage";
+
+function Router() {
+  return (
+    <Switch>
+      <Route path={"/"} component={Home} />
+      <Route path={"/about"} component={AboutPage} />
+      <Route path={"/services"} component={ServicesPage} />
+      <Route path={"/contact-us"} component={ContactPage} />
+      <Route path={"/industries"} component={IndustriesPage} />
+      <Route path={"/blogs"} component={BlogPage} />
+      <Route path={"/products"} component={ProductsPage} />
+      <Route path={"/global-capability-center"} component={GCCPage} />
+      <Route path={"/our-culture"} component={CulturePage} />
+      <Route path={"/csr"} component={CSRPage} />
+      <Route path={"/career"} component={CareerPage} />
+      <Route path={"/philosophy"} component={CulturePage} />
+      <Route path={"/privacy-policy"} component={PrivacyPage} />
+      <Route path={"/terms-and-conditions"} component={TermsPage} />
+      <Route path={"/blog/:slug"} component={BlogDetailPage} />
+      <Route path={"/case-studies"} component={CaseStudiesPage} />
+      <Route path={"/pricing"} component={PricingPage} />
+      <Route path={"/portfolio"} component={PortfolioPage} />
+      <Route path={"/admin"} component={AdminPage} />
+      <Route path={"/404"} component={NotFound} />
+      <Route component={NotFound} />
+    </Switch>
+  );
+}
+
+function App() {
+  return (
+    <ErrorBoundary>
+      <ThemeProvider defaultTheme="light">
+        <TooltipProvider>
+          <Toaster />
+          <PageTransition>
+            <Router />
+          </PageTransition>
+        </TooltipProvider>
+      </ThemeProvider>
+    </ErrorBoundary>
+  );
+}
+
+export default App;
