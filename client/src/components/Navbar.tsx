@@ -28,16 +28,22 @@ export default function Navbar() {
       }`}
     >
       <div className="container flex items-center justify-between h-20">
-        <a href="/" className="flex items-center gap-3 shrink-0" onClick={() => setLocation("/")}>
+        {/* Logo Only (Side Text Removed) */}
+        <a href="/" className="flex items-center shrink-0" onClick={() => setLocation("/")}>
           <img
-            src="/images/logos/enfycon-logo-only.png"
+            src={
+              scrolled || !isHome
+                ? "/images/logos/logo-large.webp"
+                : "/images/logos/enfycon-white.png"
+            }
             alt="Enfycon Logo"
-            className="h-10 w-auto"
-            onError={(e) => { (e.currentTarget as HTMLImageElement).src = "https://www.enfycon.com/images/logos/enfycon-logo-only.png"; }}
+            className="h-10 md:h-12 w-auto object-contain transition-all duration-300"
+            onError={(e) => {
+              (e.currentTarget as HTMLImageElement).src = scrolled || !isHome
+                ? "https://www.enfycon.com/images/logos/logo-large.webp"
+                : "https://www.enfycon.com/images/logos/enfycon-white.png";
+            }}
           />
-          <span className={`text-xl font-bold tracking-tight ${scrolled || !isHome ? "text-gray-900" : "text-white"}`}>
-            ENFYCON
-          </span>
         </a>
 
         <div className="hidden lg:flex items-center gap-1">

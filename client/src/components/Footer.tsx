@@ -84,18 +84,15 @@ export default function Footer() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-4 gap-10 mb-16">
-          {/* Logo & Description */}
+          {/* Logo Only (Side Text Removed) */}
           <div className="md:col-span-2">
-            <div className="flex items-center gap-3 mb-5">
+            <div className="mb-5">
               <img
                 src="/images/logos/enfycon-white.png"
                 alt="Enfycon"
-                className="h-10 w-auto"
+                className="h-11 md:h-14 w-auto object-contain"
                 onError={(e) => { (e.currentTarget as HTMLImageElement).src = "https://www.enfycon.com/images/logos/enfycon-white.png"; }}
               />
-              <span className="text-white text-xl font-bold tracking-tight">
-                ENFYCON
-              </span>
             </div>
             <p className="text-gray-400 leading-relaxed max-w-md mb-6">
               Enfycon provides industry-leading AI Agentic Solutions,
