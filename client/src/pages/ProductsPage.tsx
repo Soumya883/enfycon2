@@ -190,16 +190,10 @@ export default function ProductsPage() {
   });
 
   return (
-    <div className="min-h-screen bg-background relative overflow-hidden">
-      {/* Background Graphic Decorator */}
-      <div
-        className="absolute top-0 right-0 w-full h-[600px] pointer-events-none opacity-5 bg-no-repeat bg-right-top z-0"
-        style={{ backgroundImage: "url('/images/bg/map.svg')" }}
-      />
-      <div
-        className="absolute top-40 left-0 w-96 h-96 pointer-events-none opacity-10 bg-no-repeat z-0"
-        style={{ backgroundImage: "url('/images/shape/pattern-2.svg')" }}
-      />
+    <div className="min-h-screen bg-[#080C1E] relative overflow-hidden font-sans text-white">
+      {/* Background Decorators */}
+      <div className="absolute top-40 left-0 w-[600px] h-[600px] bg-indigo-600/10 rounded-full blur-[150px] pointer-events-none" />
+      <div className="absolute bottom-1/4 right-0 w-[500px] h-[500px] bg-purple-600/10 rounded-full blur-[140px] pointer-events-none" />
 
       <Navbar />
 
@@ -212,17 +206,17 @@ export default function ProductsPage() {
       {/* Filter and Search Bar Section */}
       <section className="pt-12 pb-6 relative z-10">
         <div className="container">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-6 bg-white/80 backdrop-blur-md p-6 rounded-2xl border border-gray-100 shadow-sm">
+          <div className="flex flex-col lg:flex-row items-center justify-between gap-6 bg-slate-900/60 backdrop-blur-xl p-6 rounded-2xl border border-slate-800/80 shadow-2xl">
             {/* Category Filter Pills */}
-            <div className="flex items-center gap-2 overflow-x-auto w-full md:w-auto pb-2 md:pb-0 scrollbar-none">
+            <div className="flex items-center gap-2 overflow-x-auto w-full lg:w-auto pb-2 lg:pb-0 scrollbar-none">
               {categories.map((cat) => (
                 <button
                   key={cat}
                   onClick={() => setSelectedCategory(cat)}
-                  className={`px-4 py-2 rounded-xl text-xs font-semibold whitespace-nowrap transition-all duration-200 ${
+                  className={`px-5 py-2.5 rounded-xl text-xs font-bold whitespace-nowrap transition-all duration-300 ${
                     selectedCategory === cat
-                      ? "bg-primary text-white shadow-md shadow-primary/25 scale-105"
-                      : "bg-gray-100/80 text-gray-600 hover:bg-gray-200/80 hover:text-gray-900"
+                      ? "bg-gradient-to-r from-indigo-600 to-cyan-500 text-white shadow-lg shadow-indigo-500/25 scale-105"
+                      : "bg-slate-800/50 text-slate-400 hover:bg-slate-700 hover:text-white"
                   }`}
                 >
                   {cat}
@@ -231,14 +225,14 @@ export default function ProductsPage() {
             </div>
 
             {/* Search Input */}
-            <div className="relative w-full md:w-72">
-              <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" />
+            <div className="relative w-full lg:w-80">
+              <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400" />
               <input
                 type="text"
                 placeholder="Search products..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full pl-10 pr-4 py-2 rounded-xl bg-gray-50 border border-gray-200 text-sm text-gray-900 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all"
+                className="w-full pl-11 pr-4 py-3 rounded-xl bg-slate-950/50 border border-slate-700/80 text-sm text-white placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-cyan-500/40 focus:border-cyan-500 transition-all backdrop-blur-md"
               />
             </div>
           </div>
@@ -248,46 +242,53 @@ export default function ProductsPage() {
       {/* Featured Banner Card */}
       <section className="py-6 relative z-10">
         <div className="container">
-          <div className="relative rounded-3xl overflow-hidden bg-gradient-to-r from-gray-900 via-blue-950 to-indigo-950 text-white p-8 md:p-12 border border-gray-800 shadow-2xl">
-            <div
-              className="absolute inset-0 opacity-15 bg-right bg-no-repeat"
-              style={{ backgroundImage: "url('/images/shape/pattern-3.svg')" }}
-            />
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="relative rounded-[32px] overflow-hidden bg-slate-900/80 backdrop-blur-xl text-white p-8 md:p-12 border border-slate-800 shadow-[0_30px_80px_rgba(0,0,0,0.5)] group hover:border-cyan-500/30 transition-all duration-500"
+          >
+            <div className="absolute inset-0 bg-gradient-to-r from-indigo-600/10 via-purple-600/10 to-cyan-500/10 opacity-50 group-hover:opacity-100 transition-opacity duration-500" />
+            
             <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
               <div className="lg:col-span-7">
-                <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-blue-500/20 border border-blue-400/30 text-blue-300 text-xs font-semibold mb-4">
-                  <Sparkles className="w-3.5 h-3.5 text-blue-400 animate-spin" />
+                <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-cyan-500/10 border border-cyan-400/30 text-cyan-300 text-xs font-extrabold uppercase tracking-widest mb-6">
+                  <Sparkles className="w-3.5 h-3.5 text-cyan-400 animate-spin" />
                   Featured Product Suite
                 </div>
-                <h2 className="text-3xl md:text-5xl font-extrabold text-white tracking-tight mb-4 leading-tight">
-                  Next-Gen Enterprise <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-indigo-300 to-purple-400">AI Products</span>
+                <h2 className="text-3xl md:text-5xl lg:text-6xl font-extrabold text-white tracking-tight mb-6 leading-tight">
+                  Next-Gen Enterprise <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-cyan-400">AI Products</span>
                 </h2>
-                <p className="text-gray-300 text-base md:text-lg mb-6 leading-relaxed">
+                <p className="text-slate-300 text-base md:text-lg mb-8 leading-relaxed font-light">
                   Transforming workforce productivity, data security, and operational velocity with purpose-built AI architecture.
                 </p>
-                <div className="flex flex-wrap items-center gap-6 text-sm text-gray-300">
-                  <div className="flex items-center gap-2">
-                    <ShieldCheck className="w-5 h-5 text-emerald-400" />
+                <div className="flex flex-wrap items-center gap-6 text-sm text-slate-300 font-medium">
+                  <div className="flex items-center gap-2 bg-slate-800/50 px-4 py-2 rounded-full border border-slate-700/50">
+                    <ShieldCheck className="w-4 h-4 text-emerald-400" />
                     <span>Enterprise Security</span>
                   </div>
-                  <div className="flex items-center gap-2">
-                    <Zap className="w-5 h-5 text-amber-400" />
+                  <div className="flex items-center gap-2 bg-slate-800/50 px-4 py-2 rounded-full border border-slate-700/50">
+                    <Zap className="w-4 h-4 text-amber-400" />
                     <span>Sub-Second Latency</span>
                   </div>
                 </div>
               </div>
+              
               <div className="lg:col-span-5 flex justify-center">
-                <img
-                  src="/images/logos/logo-large.webp"
-                  alt="Enfycon Enterprise AI"
-                  className="w-full max-w-sm h-auto rounded-2xl shadow-2xl border border-white/10 transform hover:scale-105 transition-transform duration-300"
-                  onError={(e) => {
-                    (e.currentTarget as HTMLImageElement).src = "https://www.enfycon.com/images/logos/logo-large.webp";
-                  }}
-                />
+                <div className="relative">
+                  <div className="absolute inset-0 bg-cyan-500/20 blur-3xl rounded-full" />
+                  <img
+                    src="/images/logos/logo-large.webp"
+                    alt="Enfycon Enterprise AI"
+                    className="w-full max-w-sm h-auto rounded-3xl shadow-[0_20px_50px_rgba(0,0,0,0.5)] border border-slate-700/80 transform group-hover:scale-105 group-hover:rotate-1 transition-all duration-700 relative z-10"
+                    onError={(e) => {
+                      (e.currentTarget as HTMLImageElement).src = "https://www.enfycon.com/images/logos/logo-large.webp";
+                    }}
+                  />
+                </div>
               </div>
             </div>
-          </div>
+          </motion.div>
         </div>
       </section>
 
@@ -295,14 +296,14 @@ export default function ProductsPage() {
       <section className="py-12 pb-24 relative z-10">
         <div className="container">
           {filteredProducts.length === 0 ? (
-            <div className="text-center py-20 bg-white rounded-3xl border border-gray-100 p-8">
-              <p className="text-gray-500 text-lg font-medium">No products match your current search criteria.</p>
+            <div className="text-center py-24 bg-slate-900/40 backdrop-blur-md rounded-[32px] border border-slate-800 p-8 shadow-2xl">
+              <p className="text-slate-400 text-lg font-medium mb-6">No products match your current search criteria.</p>
               <button
                 onClick={() => {
                   setSelectedCategory("All");
                   setSearchQuery("");
                 }}
-                className="mt-4 px-5 py-2.5 bg-primary text-white text-sm font-semibold rounded-xl hover:bg-primary/90 transition-colors"
+                className="px-8 py-3 bg-gradient-to-r from-indigo-600 to-cyan-500 text-white text-sm font-extrabold rounded-xl hover:shadow-[0_0_20px_rgba(0,212,255,0.4)] transition-all duration-300"
               >
                 Reset Filters
               </button>
@@ -314,55 +315,57 @@ export default function ProductsPage() {
                   <motion.div
                     key={product.id}
                     layout
-                    initial={{ opacity: 0, y: 20 }}
+                    initial={{ opacity: 0, y: 30 }}
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, scale: 0.95 }}
-                    transition={{ duration: 0.3, delay: i * 0.05 }}
-                    className="bg-white rounded-2xl border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col overflow-hidden group hover:-translate-y-1"
+                    transition={{ duration: 0.5, delay: i * 0.05 }}
+                    whileHover={{ y: -10 }}
+                    className="bg-slate-900/60 backdrop-blur-xl rounded-[24px] border border-slate-800 shadow-xl hover:shadow-[0_20px_60px_rgba(99,102,241,0.15)] hover:border-indigo-500/40 transition-all duration-500 flex flex-col overflow-hidden group"
                   >
                     {/* Image Preview Container */}
-                    <div className="relative h-52 w-full overflow-hidden bg-gray-100">
+                    <div className="relative h-56 w-full overflow-hidden bg-slate-950">
+                      <div className="absolute inset-0 bg-indigo-600/20 mix-blend-overlay group-hover:opacity-0 transition-opacity duration-500 z-10 pointer-events-none" />
                       <img
                         src={product.image}
                         alt={product.name}
-                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 opacity-80 group-hover:opacity-100"
                         onError={(e) => {
                           (e.currentTarget as HTMLImageElement).src = product.fallback;
                         }}
                       />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-80" />
+                      <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-900/40 to-transparent z-10" />
                       
                       {/* Category Badge */}
-                      <div className="absolute top-4 left-4">
-                        <span className={`px-3 py-1 rounded-full bg-gradient-to-r ${product.gradient} text-white text-xs font-semibold shadow-md`}>
+                      <div className="absolute top-5 left-5 z-20">
+                        <span className={`px-4 py-1.5 rounded-full bg-gradient-to-r ${product.gradient} text-white text-xs font-extrabold uppercase tracking-wider shadow-lg`}>
                           {product.badge}
                         </span>
                       </div>
 
                       {/* Title overlay on image */}
-                      <div className="absolute bottom-4 left-4 right-4">
-                        <h3 className="text-2xl font-extrabold text-white tracking-tight drop-shadow-md">
+                      <div className="absolute bottom-5 left-5 right-5 z-20">
+                        <h3 className="text-2xl md:text-3xl font-extrabold text-white tracking-tight drop-shadow-lg mb-1 group-hover:text-cyan-300 transition-colors">
                           {product.name}
                         </h3>
-                        <p className="text-xs text-white/80 font-medium tracking-wide">
+                        <p className="text-xs text-cyan-100/80 font-semibold tracking-wide drop-shadow-md">
                           {product.tagline}
                         </p>
                       </div>
                     </div>
 
                     {/* Content Section */}
-                    <div className="p-6 flex-1 flex flex-col justify-between">
+                    <div className="p-8 flex-1 flex flex-col justify-between">
                       <div>
-                        <p className="text-gray-600 text-sm leading-relaxed mb-6">
+                        <p className="text-slate-300 text-sm leading-relaxed mb-8 font-light">
                           {product.description}
                         </p>
 
                         {/* Features List */}
-                        <div className="space-y-2.5 mb-6 bg-gray-50/70 rounded-xl p-4 border border-gray-100">
-                          <p className="text-xs font-bold text-gray-900 uppercase tracking-wider mb-2">Key Highlights</p>
+                        <div className="space-y-3 mb-8 bg-slate-950/50 rounded-2xl p-5 border border-slate-800/80">
+                          <p className="text-xs font-extrabold text-slate-400 uppercase tracking-widest mb-3">Key Highlights</p>
                           {product.features.map((feat, idx) => (
-                            <div key={idx} className="flex items-center gap-2 text-xs text-gray-700">
-                              <CheckCircle className="w-3.5 h-3.5 text-emerald-500 shrink-0" />
+                            <div key={idx} className="flex items-start gap-3 text-sm text-slate-300 font-light">
+                              <CheckCircle className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
                               <span>{feat}</span>
                             </div>
                           ))}
@@ -370,16 +373,22 @@ export default function ProductsPage() {
                       </div>
 
                       {/* Action CTA */}
-                      <div className="pt-4 border-t border-gray-100 flex items-center justify-between">
+                      <div className="pt-6 border-t border-slate-800/80 flex items-center justify-between">
                         <a
                           href="/contact-us"
-                          className="inline-flex items-center gap-1.5 text-sm font-bold text-primary group-hover:text-blue-700 transition-colors"
+                          className="inline-flex items-center gap-2 text-sm font-extrabold text-cyan-400 hover:text-cyan-300 transition-colors group/link"
                         >
-                          Request Demo
-                          <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                          <span className="relative after:absolute after:bottom-0 after:left-0 after:right-0 after:h-px after:bg-cyan-400 after:scale-x-0 group-hover/link:after:scale-x-100 after:transition-transform after:duration-300 after:origin-left">Request Demo</span>
+                          <motion.span
+                            className="inline-block"
+                            whileHover={{ x: 5 }}
+                            transition={{ type: "spring", stiffness: 400, damping: 20 }}
+                          >
+                            <ArrowRight className="w-4 h-4 group-hover/link:translate-x-1.5 transition-transform duration-300" />
+                          </motion.span>
                         </a>
-                        <span className="text-xs text-gray-400 font-medium flex items-center gap-1">
-                          Enterprise Ready <ExternalLink className="w-3 h-3" />
+                        <span className="text-xs text-slate-500 font-bold uppercase tracking-wider flex items-center gap-1.5 bg-slate-800/50 px-2.5 py-1 rounded-md">
+                          Enterprise <ExternalLink className="w-3.5 h-3.5" />
                         </span>
                       </div>
                     </div>
