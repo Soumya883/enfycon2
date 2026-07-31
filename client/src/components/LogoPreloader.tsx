@@ -1,6 +1,9 @@
 import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence, useSpring, useTransform } from "framer-motion";
 
+// Only show preloader once per browser session
+const HAS_LOADED_KEY = "enfycon_loaded";
+
 const sciFiStatuses = [
   { text: "BOOTSTRAPPING QUANTUM NEURAL MATRIX", icon: "⬡" },
   { text: "ENCRYPTING ZERO-TRUST PROTOCOLS", icon: "◈" },
@@ -28,7 +31,9 @@ const orbitalMarkers = Array.from({ length: 8 }, (_, i) => ({
 }));
 
 export default function LogoPreloader() {
-  const [visible, setVisible] = useState(true);
+  // Skip preloader on repeat visits in same session — critical for LCP on navigations
+  const alreadyLoaded = typeof sessionStorage !== "undefined" && sessionStorage.getItem(HAS_LOADED_KEY);
+  const [visible, setVisible] = useState(!alreadyLoaded);
   const [progress, setProgress] = useState(0);
   const [statusIdx, setStatusIdx] = useState(0);
   const [glitch, setGlitch] = useState(false);
@@ -38,6 +43,7 @@ export default function LogoPreloader() {
   const barWidth = useTransform(springProgress, [0, 100], ["0%", "100%"]);
 
   useEffect(() => {
+    if (!visible) return; // already hidden, skip interval
     const interval = setInterval(() => {
       setProgress((prev) => {
         const delta = Math.floor(Math.random() * 10) + 4;
@@ -45,6 +51,8 @@ export default function LogoPreloader() {
         springProgress.set(next);
         if (next >= 100) {
           clearInterval(interval);
+          // Mark session so preloader won't show again this session
+          sessionStorage.setItem(HAS_LOADED_KEY, "1");
           setTimeout(() => setVisible(false), 600);
         }
         return next;

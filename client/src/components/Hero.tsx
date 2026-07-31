@@ -2,7 +2,7 @@ import { useRef } from "react";
 import { motion, useScroll, useTransform, useSpring, useMotionValue, AnimatePresence } from "framer-motion";
 import { ArrowRight, Sparkles, Star, Rocket, Lock, Zap } from "lucide-react";
 
-const particleDots = Array.from({ length: 28 }, (_, i) => ({
+const particleDots = Array.from({ length: 16 }, (_, i) => ({
   x: (i * 17 + 5) % 100,
   y: (i * 23 + 10) % 100,
   dx: (i % 2 === 0 ? 1 : -1) * ((i % 5) + 1) * 3,
@@ -77,6 +77,7 @@ export default function Hero() {
       <motion.div style={{ y: videoY }} className="absolute top-0 left-0 w-full h-full z-0">
         <video
           autoPlay loop muted playsInline
+          preload="none"
           className="w-full h-full object-cover opacity-80"
         >
           <source src="/video/hero-video.mp4" type="video/mp4" />
