@@ -28,7 +28,7 @@ export default function Navbar() {
       }`}
     >
       <div className="container flex items-center justify-between">
-        {/* Logo 20% Larger & Brighter */}
+        {/* Logo */}
         <a href="/" className="flex items-center shrink-0 group" onClick={() => setLocation("/")}>
           <img
             src="/images/logos/enfycon-white.png"
@@ -72,10 +72,10 @@ export default function Navbar() {
           })}
         </div>
 
-        {/* Actions & Hamburger Toggle */}
+        {/* Desktop Contact CTA & Mobile Hamburger Toggle */}
         <div className="flex items-center gap-3">
           <Button
-            className="hidden sm:inline-flex font-extrabold rounded-full px-6 py-4 text-xs bg-gradient-to-r from-indigo-600 via-purple-600 to-cyan-500 hover:from-indigo-500 hover:to-cyan-400 text-white shadow-[0_0_25px_rgba(79,70,229,0.5)] hover:shadow-[0_0_35px_rgba(0,212,255,0.7)] active:scale-[0.96] transition-all duration-300 items-center gap-1.5"
+            className="hidden lg:inline-flex font-extrabold rounded-full px-6 py-4 text-xs bg-gradient-to-r from-indigo-600 via-purple-600 to-cyan-500 hover:from-indigo-500 hover:to-cyan-400 text-white shadow-[0_0_25px_rgba(79,70,229,0.5)] hover:shadow-[0_0_35px_rgba(0,212,255,0.7)] active:scale-[0.96] transition-all duration-300 items-center gap-1.5"
             onClick={() => {
               if (isHome) {
                 const el = document.querySelector("#contact");
@@ -89,7 +89,7 @@ export default function Navbar() {
             <ArrowUpRight className="w-4 h-4" />
           </Button>
 
-          {/* Always Visible Mobile Hamburger Button */}
+          {/* 3-Line Hamburger Button (Mobile & Tablet) */}
           <button
             className="lg:hidden p-2.5 rounded-xl bg-slate-900/90 border border-slate-700/80 text-white hover:text-cyan-400 hover:border-cyan-400/50 active:scale-95 transition-all shadow-md flex items-center justify-center shrink-0"
             onClick={() => setMobileOpen(!mobileOpen)}
@@ -100,7 +100,7 @@ export default function Navbar() {
         </div>
       </div>
 
-      {/* Mobile Drawer Menu */}
+      {/* Mobile Drawer Menu with Contact Us CTA Inside */}
       {mobileOpen && (
         <div className="lg:hidden fixed inset-x-0 top-[70px] bg-slate-950/95 backdrop-blur-2xl border-b border-slate-800 p-6 shadow-2xl z-50 animate-in slide-in-from-top-4 duration-300">
           <div className="container flex flex-col gap-2 max-h-[80vh] overflow-y-auto">
@@ -113,13 +113,12 @@ export default function Navbar() {
               { label: "Blogs", href: "/blogs" },
               { label: "Portfolio", href: "/portfolio" },
               { label: "Pricing", href: "/pricing" },
-              { label: "Contact Us", href: "/contact-us" },
             ].map((link) => (
               <a
                 key={link.href}
                 href={link.href}
                 onClick={() => setMobileOpen(false)}
-                className={`px-4 py-3.5 rounded-xl text-sm font-extrabold transition-all flex items-center justify-between ${
+                className={`px-4 py-3 rounded-xl text-sm font-extrabold transition-all flex items-center justify-between ${
                   location === link.href
                     ? "text-white bg-indigo-600/40 border border-indigo-500/50 shadow-md"
                     : "text-slate-200 hover:text-white hover:bg-white/10"
@@ -129,15 +128,22 @@ export default function Navbar() {
                 <ArrowUpRight className="w-4 h-4 opacity-70" />
               </a>
             ))}
+
+            {/* Prominent Contact Us CTA Inside Hamburger Drawer */}
             <div className="pt-4 mt-2 border-t border-slate-800">
               <Button
-                className="w-full font-extrabold rounded-xl py-4 text-xs bg-gradient-to-r from-indigo-600 via-purple-600 to-cyan-500 text-white shadow-lg flex items-center justify-center gap-2"
+                className="w-full font-extrabold rounded-xl py-4 text-sm bg-gradient-to-r from-indigo-600 via-purple-600 to-cyan-500 text-white shadow-xl flex items-center justify-center gap-2 hover:from-indigo-500 hover:to-cyan-400 active:scale-[0.98] transition-all"
                 onClick={() => {
                   setMobileOpen(false);
-                  setLocation("/contact-us");
+                  if (isHome) {
+                    const el = document.querySelector("#contact");
+                    if (el) el.scrollIntoView({ behavior: "smooth" });
+                  } else {
+                    setLocation("/contact-us");
+                  }
                 }}
               >
-                <span>Get Started Now</span>
+                <span>Contact Us</span>
                 <ArrowUpRight className="w-4 h-4" />
               </Button>
             </div>
