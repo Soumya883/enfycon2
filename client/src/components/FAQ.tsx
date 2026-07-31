@@ -41,9 +41,9 @@ const faqs = [
 
 export default function FAQ() {
   return (
-    <section className="py-28 bg-background relative">
+    <section className="py-24 bg-white relative border-t border-gray-100">
       <div className="container">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           {/* Left - Image */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
@@ -52,14 +52,13 @@ export default function FAQ() {
             transition={{ duration: 0.7 }}
             className="relative"
           >
-            <div className="rounded-2xl overflow-hidden shadow-2xl">
+            <div className="rounded-3xl overflow-hidden shadow-xl border border-gray-100">
               <img
                 src="/images/faq/faq.jpg"
                 alt="FAQ"
                 className="w-full h-[520px] object-cover"
                 onError={(e) => { (e.currentTarget as HTMLImageElement).src = "https://www.enfycon.com/images/faq/faq.jpg"; }}
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-background/50 to-transparent" />
             </div>
           </motion.div>
 
@@ -70,12 +69,12 @@ export default function FAQ() {
             viewport={{ once: true }}
             transition={{ duration: 0.7, delay: 0.2 }}
           >
-            <p className="text-primary font-semibold tracking-[0.2em] uppercase text-sm mb-3">
+            <p className="text-primary font-bold tracking-[0.2em] uppercase text-xs mb-3">
               FAQ
             </p>
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-8">
+            <h2 className="text-3xl md:text-4xl font-extrabold text-gray-900 mb-8">
               Frequently Asked{" "}
-              <span className="text-gradient">Questions</span>
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">Questions</span>
             </h2>
 
             <Accordion type="single" collapsible className="w-full space-y-3">
@@ -83,12 +82,12 @@ export default function FAQ() {
                 <AccordionItem
                   key={i}
                   value={`faq-${i}`}
-                  className="border border-border/50 rounded-xl px-6 data-[state=open]:border-primary/30 data-[state=open]:bg-primary/5 transition-all duration-300"
+                  className="border border-gray-200 rounded-2xl px-6 data-[state=open]:border-primary/40 data-[state=open]:bg-blue-50/40 transition-all duration-300 shadow-sm"
                 >
-                  <AccordionTrigger className="text-white hover:text-primary text-left font-medium py-5">
+                  <AccordionTrigger className="text-gray-900 hover:text-primary text-left font-bold text-base py-5">
                     {faq.question}
                   </AccordionTrigger>
-                  <AccordionContent className="text-muted-foreground leading-relaxed pb-5">
+                  <AccordionContent className="text-gray-600 leading-relaxed text-sm pb-5">
                     {faq.answer}
                   </AccordionContent>
                 </AccordionItem>

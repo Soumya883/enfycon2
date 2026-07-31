@@ -65,7 +65,7 @@ const processSteps = [
 
 export default function Industries() {
   return (
-    <section id="industries" className="py-28 bg-background relative">
+    <section id="industries" className="py-24 bg-gray-50/60 relative border-t border-gray-100">
       <div className="container">
         {/* Industries */}
         <motion.div
@@ -75,20 +75,20 @@ export default function Industries() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <p className="text-primary font-semibold tracking-[0.2em] uppercase text-sm mb-3">
+          <p className="text-primary font-bold tracking-[0.2em] uppercase text-xs mb-3">
             Industries We Serve
           </p>
-          <h2 className="text-3xl md:text-5xl font-bold text-white mb-4">
+          <h2 className="text-3xl md:text-5xl font-extrabold text-gray-900 mb-4">
             Powering{" "}
-            <span className="text-gradient">Every Vertical</span>
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">Every Vertical</span>
           </h2>
-          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+          <p className="text-gray-600 text-base md:text-lg max-w-2xl mx-auto leading-relaxed">
             From healthcare to finance, startups to global enterprises — we deliver
             solutions across every industry.
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-28">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-24">
           {industries.map((industry, i) => (
             <motion.div
               key={i}
@@ -96,17 +96,19 @@ export default function Industries() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: i * 0.08 }}
-              className="group bg-card border border-border/50 rounded-2xl p-8 hover:border-primary/30 hover:shadow-[0_4px_30px_rgba(67,97,238,0.1)] transition-all duration-300"
+              className="group bg-white border border-gray-200/80 rounded-2xl p-8 hover:border-blue-300 hover:shadow-lg transition-all duration-300 flex flex-col justify-between"
             >
-              <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mb-6 group-hover:bg-primary/20 transition-colors">
-                <industry.icon className="w-7 h-7 text-primary" />
+              <div>
+                <div className="w-14 h-14 rounded-2xl bg-blue-50 text-blue-600 flex items-center justify-center mb-6 group-hover:bg-primary group-hover:text-white transition-all duration-300">
+                  <industry.icon className="w-7 h-7" />
+                </div>
+                <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-primary transition-colors">
+                  {industry.title}
+                </h3>
+                <p className="text-gray-600 leading-relaxed text-sm">
+                  {industry.description}
+                </p>
               </div>
-              <h3 className="text-lg font-bold text-white mb-3">
-                {industry.title}
-              </h3>
-              <p className="text-muted-foreground leading-relaxed text-sm">
-                {industry.description}
-              </p>
             </motion.div>
           ))}
         </div>
@@ -119,12 +121,12 @@ export default function Industries() {
           transition={{ duration: 0.6 }}
           className="text-center mb-14"
         >
-          <p className="text-primary font-semibold tracking-[0.2em] uppercase text-sm mb-3">
+          <p className="text-primary font-bold tracking-[0.2em] uppercase text-xs mb-3">
             Our Process
           </p>
-          <h2 className="text-3xl md:text-4xl font-bold text-white">
+          <h2 className="text-3xl md:text-4xl font-extrabold text-gray-900">
             How We{" "}
-            <span className="text-gradient">Deliver Results</span>
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">Deliver Results</span>
           </h2>
         </motion.div>
 
@@ -136,18 +138,15 @@ export default function Industries() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: i * 0.12 }}
-              className="relative text-center"
+              className="relative text-center bg-white p-6 rounded-2xl border border-gray-100 shadow-sm"
             >
-              <div className="w-18 h-18 mx-auto rounded-full bg-gradient-to-br from-primary/20 to-primary/5 border border-primary/20 flex items-center justify-center mb-6">
-                <span className="text-primary font-bold text-xl">{step.step}</span>
+              <div className="w-16 h-16 mx-auto rounded-2xl bg-gradient-to-br from-blue-500 to-indigo-600 text-white flex items-center justify-center mb-5 shadow-md shadow-blue-500/20">
+                <span className="font-black text-xl">{step.step}</span>
               </div>
-              <h3 className="text-lg font-bold text-white mb-3">{step.title}</h3>
-              <p className="text-muted-foreground text-sm leading-relaxed">
+              <h3 className="text-lg font-bold text-gray-900 mb-2">{step.title}</h3>
+              <p className="text-gray-600 text-xs leading-relaxed">
                 {step.description}
               </p>
-              {i < processSteps.length - 1 && (
-                <div className="hidden lg:block absolute top-9 left-[60%] w-[80%] h-px bg-gradient-to-r from-border to-transparent" />
-              )}
             </motion.div>
           ))}
         </div>
