@@ -1,67 +1,26 @@
 import { motion } from "framer-motion";
-import { ArrowRight, Bot, Shield, Users, RefreshCw, MessageSquare, Cpu, Share2, Sparkles } from "lucide-react";
+import { ArrowRight, Bot, Shield, Users, RefreshCw, MessageSquare, Cpu, Sparkles } from "lucide-react";
 
 const services = [
-  {
-    title: "AI Agentic Solutions",
-    description: "Autonomous AI agents designed to optimize complex enterprise workflows and decision-making processes.",
-    image: "/images/service/ai-agentic-solutions.jpg",
-    fallback: "https://www.enfycon.com/images/service/ai-agentic-solutions.jpg",
-    slug: "ai-agentic-solutions",
-    icon: Bot,
-    color: "from-indigo-600 to-purple-600",
-  },
-  {
-    title: "AI-First Platforms",
-    description: "Build robust, scalable platforms with artificial intelligence at their core, not as an afterthought.",
-    image: "/images/service/ai-first-platforms.jpg",
-    fallback: "https://www.enfycon.com/images/service/ai-first-platforms.jpg",
-    slug: "ai-first-platforms",
-    icon: Cpu,
-    color: "from-blue-600 to-cyan-600",
-  },
-  {
-    title: "Cybersecurity Assessment",
-    description: "Comprehensive security audits and penetration testing to fortify your digital infrastructure.",
-    image: "/images/service/security-assessment.jpg",
-    fallback: "https://www.enfycon.com/images/service/security-assessment.jpg",
-    slug: "cybersecurity",
-    icon: Shield,
-    color: "from-emerald-600 to-teal-600",
-  },
-  {
-    title: "Enterprise Modernization",
-    description: "Upgrade legacy systems to cloud-native architectures for unprecedented agility and scale.",
-    image: "/images/service/enterprise-modernization.jpg",
-    fallback: "https://www.enfycon.com/images/service/enterprise-modernization.jpg",
-    slug: "enterprise-modernization",
-    icon: RefreshCw,
-    color: "from-amber-600 to-orange-600",
-  },
-  {
-    title: "US IT Staffing",
-    description: "Connect with elite IT professionals. We source top-tier talent for your most critical technical roles.",
-    image: "/images/service/us-it-staffing.png",
-    fallback: "https://www.enfycon.com/images/service/us-it-staffing.png",
-    slug: "it-staffing",
-    icon: Users,
-    color: "from-rose-600 to-pink-600",
-  },
-  {
-    title: "Personalized Customer Engagement",
-    description: "Leverage AI to deliver hyper-personalized experiences that drive customer loyalty.",
-    image: "/images/service/personalized-customer-engagement.jpg",
-    fallback: "https://www.enfycon.com/images/service/personalized-customer-engagement.jpg",
-    slug: "customer-engagement",
-    icon: MessageSquare,
-    color: "from-cyan-600 to-blue-600",
-  },
+  { title: "AI Agentic Solutions", description: "Autonomous AI agents designed to optimize complex enterprise workflows and decision-making processes.", image: "/images/service/ai-agentic-solutions.jpg", fallback: "https://www.enfycon.com/images/service/ai-agentic-solutions.jpg", slug: "ai-agentic-solutions", icon: Bot, color: "from-indigo-600 to-purple-600", glow: "rgba(79,70,229,0.4)" },
+  { title: "AI-First Platforms", description: "Build robust, scalable platforms with artificial intelligence at their core, not as an afterthought.", image: "/images/service/ai-first-platforms.jpg", fallback: "https://www.enfycon.com/images/service/ai-first-platforms.jpg", slug: "ai-first-platforms", icon: Cpu, color: "from-blue-600 to-cyan-600", glow: "rgba(6,182,212,0.4)" },
+  { title: "Cybersecurity Assessment", description: "Comprehensive security audits and penetration testing to fortify your digital infrastructure.", image: "/images/service/security-assessment.jpg", fallback: "https://www.enfycon.com/images/service/security-assessment.jpg", slug: "cybersecurity", icon: Shield, color: "from-emerald-600 to-teal-600", glow: "rgba(16,185,129,0.4)" },
+  { title: "Enterprise Modernization", description: "Upgrade legacy systems to cloud-native architectures for unprecedented agility and scale.", image: "/images/service/enterprise-modernization.jpg", fallback: "https://www.enfycon.com/images/service/enterprise-modernization.jpg", slug: "enterprise-modernization", icon: RefreshCw, color: "from-amber-600 to-orange-600", glow: "rgba(245,158,11,0.4)" },
+  { title: "US IT Staffing", description: "Connect with elite IT professionals. We source top-tier talent for your most critical technical roles.", image: "/images/service/us-it-staffing.png", fallback: "https://www.enfycon.com/images/service/us-it-staffing.png", slug: "it-staffing", icon: Users, color: "from-rose-600 to-pink-600", glow: "rgba(244,63,94,0.4)" },
+  { title: "Personalized Customer Engagement", description: "Leverage AI to deliver hyper-personalized experiences that drive customer loyalty.", image: "/images/service/personalized-customer-engagement.jpg", fallback: "https://www.enfycon.com/images/service/personalized-customer-engagement.jpg", slug: "customer-engagement", icon: MessageSquare, color: "from-cyan-600 to-blue-600", glow: "rgba(0,212,255,0.4)" },
 ];
+
+const cardVariants = {
+  hidden: { opacity: 0, y: 32 },
+  visible: (i: number) => ({
+    opacity: 1, y: 0,
+    transition: { duration: 0.55, delay: i * 0.09, ease: [0.22, 1, 0.36, 1] },
+  }),
+};
 
 export default function Services() {
   return (
     <section id="services" className="py-28 lg:py-36 bg-[#F8FAFC] relative overflow-hidden">
-      {/* Background Decorators */}
       <div className="absolute top-0 right-0 w-96 h-96 bg-indigo-500/5 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute bottom-0 left-0 w-96 h-96 bg-cyan-500/5 rounded-full blur-3xl pointer-events-none" />
 
@@ -92,14 +51,19 @@ export default function Services() {
           {services.map((service, i) => (
             <motion.div
               key={i}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              custom={i}
+              variants={cardVariants}
+              initial="hidden"
+              whileInView="visible"
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: i * 0.08 }}
-              whileHover={{ y: -12 }}
-              className="group bg-white rounded-[20px] border border-slate-200/80 overflow-hidden transition-all duration-500 hover:border-indigo-400 hover:shadow-[0_30px_70px_rgba(79,70,229,0.12)] flex flex-col"
+              whileHover={{ y: -14, boxShadow: `0 30px 70px ${service.glow}` }}
+              transition={{ type: "spring", stiffness: 280, damping: 24 }}
+              className="group bg-white rounded-[20px] border border-slate-200/80 overflow-hidden transition-colors duration-500 hover:border-indigo-400 flex flex-col relative"
             >
-              {/* Image Container with 1.08 Scale */}
+              {/* Hover gradient accent line on left */}
+              <div className={`absolute left-0 top-6 bottom-6 w-0.5 bg-gradient-to-b ${service.color} scale-y-0 group-hover:scale-y-100 transition-transform duration-500 origin-top rounded-full`} />
+
+              {/* Image with zoom */}
               <div className="h-56 overflow-hidden relative bg-slate-100">
                 <img
                   src={service.image}
@@ -108,10 +72,10 @@ export default function Services() {
                   onError={(e) => { (e.currentTarget as HTMLImageElement).src = service.fallback; }}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-slate-950/20 to-transparent" />
-                
-                {/* Floating Icon */}
-                <div className={`absolute top-4 left-4 w-12 h-12 rounded-[14px] bg-gradient-to-br ${service.color} flex items-center justify-center shadow-lg text-white group-hover:scale-110 transition-transform duration-300`}>
-                  <service.icon className="w-6 h-6" />
+
+                {/* Floating Icon — scales up on hover */}
+                <div className={`absolute top-4 left-4 w-12 h-12 rounded-[14px] bg-gradient-to-br ${service.color} flex items-center justify-center shadow-lg text-white group-hover:scale-[1.18] transition-transform duration-400`}>
+                  <service.icon className="w-6 h-6 group-hover:rotate-6 transition-transform duration-300" />
                 </div>
               </div>
 
@@ -121,17 +85,13 @@ export default function Services() {
                   <h3 className="text-xl font-extrabold text-slate-900 mb-3 group-hover:text-indigo-600 transition-colors duration-300 leading-snug">
                     {service.title}
                   </h3>
-                  <p className="text-slate-600 mb-8 leading-relaxed text-sm">
-                    {service.description}
-                  </p>
+                  <p className="text-slate-600 mb-8 leading-relaxed text-sm">{service.description}</p>
                 </div>
-
-                {/* Animated Learn More Button */}
                 <a
                   href={`/services#${service.slug}`}
                   className="inline-flex items-center gap-2 text-indigo-600 font-extrabold text-sm hover:text-indigo-800 transition-colors group/btn mt-auto"
                 >
-                  <span>Learn More</span>
+                  <span className="relative after:absolute after:bottom-0 after:left-0 after:right-0 after:h-px after:bg-indigo-600 after:scale-x-0 group-hover/btn:after:scale-x-100 after:transition-transform after:duration-300 after:origin-left">Learn More</span>
                   <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-2 transition-transform duration-300" />
                 </a>
               </div>
