@@ -39,9 +39,10 @@ export default function Navbar() {
       <div className="container flex items-center justify-between h-20">
         <a href="/" className="flex items-center gap-3 shrink-0" onClick={() => setLocation("/")}>
           <img
-            src="/manus-storage/enfycon-logo-only_5ce6964d.png"
+            src="https://www.enfycon.com/images/logos/enfycon-logo-only.png"
             alt="Enfycon Logo"
             className="h-10 w-auto"
+            onError={(e) => { (e.currentTarget as HTMLImageElement).src = "/manus-storage/enfycon-logo-only_5ce6964d.png"; }}
           />
           <span className={`text-xl font-bold tracking-tight ${scrolled || !isHome ? "text-gray-900" : "text-white"}`}>
             ENFYCON

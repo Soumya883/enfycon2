@@ -88,9 +88,10 @@ export default function Footer() {
           <div className="md:col-span-2">
             <div className="flex items-center gap-3 mb-5">
               <img
-                src="/manus-storage/enfycon-white_6b6c054a.png"
+                src="https://www.enfycon.com/images/logos/enfycon-white.png"
                 alt="Enfycon"
                 className="h-10 w-auto"
+                onError={(e) => { (e.currentTarget as HTMLImageElement).src = "/manus-storage/enfycon-white_6b6c054a.png"; }}
               />
               <span className="text-white text-xl font-bold tracking-tight">
                 ENFYCON
