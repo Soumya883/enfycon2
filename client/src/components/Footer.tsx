@@ -164,7 +164,7 @@ export default function Footer() {
           </p>
           <div className="flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-gray-800/80 border border-gray-700/60 text-xs text-gray-300 font-medium hover:border-blue-500/40 transition-colors">
             <Heart className="w-3.5 h-3.5 text-rose-500 fill-rose-500 animate-pulse" />
-            <span>Crafted & Built by Humans</span>
+            <span>Crafted & Built by Soumya Ranjan</span>
           </div>
           <button
             onClick={scrollToTop}
