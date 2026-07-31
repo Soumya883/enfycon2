@@ -1,7 +1,7 @@
 import { Toaster } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import NotFound from "@/pages/NotFound";
-import { Route, Switch } from "wouter";
+import { Route, Switch, Redirect } from "wouter";
 import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import PageTransition from "./components/PageTransition";
@@ -20,7 +20,6 @@ import PrivacyPage from "./pages/PrivacyPage";
 import TermsPage from "./pages/TermsPage";
 import AdminPage from "./pages/AdminPage";
 import BlogDetailPage from "./pages/BlogDetailPage";
-import CaseStudiesPage from "./pages/CaseStudiesPage";
 import PricingPage from "./pages/PricingPage";
 import PortfolioPage from "./pages/PortfolioPage";
 
@@ -42,7 +41,7 @@ function Router() {
       <Route path={"/privacy-policy"} component={PrivacyPage} />
       <Route path={"/terms-and-conditions"} component={TermsPage} />
       <Route path={"/blog/:slug"} component={BlogDetailPage} />
-      <Route path={"/case-studies"} component={CaseStudiesPage} />
+      <Route path={"/case-studies"}>{() => <Redirect to="/portfolio" />}</Route>
       <Route path={"/pricing"} component={PricingPage} />
       <Route path={"/portfolio"} component={PortfolioPage} />
       <Route path={"/admin"} component={AdminPage} />

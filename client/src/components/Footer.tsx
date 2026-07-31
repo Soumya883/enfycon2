@@ -88,10 +88,10 @@ export default function Footer() {
           <div className="md:col-span-2">
             <div className="flex items-center gap-3 mb-5">
               <img
-                src="https://www.enfycon.com/images/logos/enfycon-white.png"
+                src="/images/logos/enfycon-white.png"
                 alt="Enfycon"
                 className="h-10 w-auto"
-                onError={(e) => { (e.currentTarget as HTMLImageElement).src = "/manus-storage/enfycon-white_6b6c054a.png"; }}
+                onError={(e) => { (e.currentTarget as HTMLImageElement).src = "https://www.enfycon.com/images/logos/enfycon-white.png"; }}
               />
               <span className="text-white text-xl font-bold tracking-tight">
                 ENFYCON
@@ -146,7 +146,6 @@ export default function Footer() {
             <h4 className="text-white font-semibold mb-5 text-sm uppercase tracking-wider">Company</h4>
             <ul className="space-y-3">
               <li><a href="/about" className="text-gray-400 hover:text-blue-400 transition-colors text-sm">About Us</a></li>
-              <li><a href="/case-studies" className="text-gray-400 hover:text-blue-400 transition-colors text-sm">Case Studies</a></li>
               <li><a href="/portfolio" className="text-gray-400 hover:text-blue-400 transition-colors text-sm">Portfolio</a></li>
               <li><a href="/pricing" className="text-gray-400 hover:text-blue-400 transition-colors text-sm">Pricing</a></li>
               <li><a href="/blogs" className="text-gray-400 hover:text-blue-400 transition-colors text-sm">Blog</a></li>

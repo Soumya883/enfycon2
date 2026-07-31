@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { Menu, X, ChevronDown } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { useLocation } from "wouter";
 
 export default function Navbar() {
@@ -19,15 +19,6 @@ export default function Navbar() {
     setMobileOpen(false);
   }, [location]);
 
-  const scrollTo = (href: string) => {
-    if (isHome) {
-      const el = document.querySelector(href);
-      if (el) el.scrollIntoView({ behavior: "smooth" });
-    } else {
-      setLocation("/" + href);
-    }
-  };
-
   return (
     <nav
       className={`fixed w-full z-50 top-0 left-0 transition-all duration-300 ${
@@ -39,10 +30,10 @@ export default function Navbar() {
       <div className="container flex items-center justify-between h-20">
         <a href="/" className="flex items-center gap-3 shrink-0" onClick={() => setLocation("/")}>
           <img
-            src="https://www.enfycon.com/images/logos/enfycon-logo-only.png"
+            src="/images/logos/enfycon-logo-only.png"
             alt="Enfycon Logo"
             className="h-10 w-auto"
-            onError={(e) => { (e.currentTarget as HTMLImageElement).src = "/manus-storage/enfycon-logo-only_5ce6964d.png"; }}
+            onError={(e) => { (e.currentTarget as HTMLImageElement).src = "https://www.enfycon.com/images/logos/enfycon-logo-only.png"; }}
           />
           <span className={`text-xl font-bold tracking-tight ${scrolled || !isHome ? "text-gray-900" : "text-white"}`}>
             ENFYCON
@@ -57,7 +48,6 @@ export default function Navbar() {
             { label: "Products", href: "/products" },
             { label: "GCC Solutions", href: "/global-capability-center" },
             { label: "Blogs", href: "/blogs" },
-            { label: "Case Studies", href: "/case-studies" },
             { label: "Portfolio", href: "/portfolio" },
             { label: "Pricing", href: "/pricing" },
           ].map((link) => (
@@ -66,10 +56,10 @@ export default function Navbar() {
               href={link.href}
               className={`px-3 py-2 rounded-lg text-sm font-medium transition-colors ${
                 location === link.href
-                  ? "text-primary bg-primary/5"
+                  ? "text-primary bg-primary/5 font-semibold"
                   : scrolled || !isHome
-                  ? "text-gray-600 hover:text-primary hover:bg-gray-50"
-                  : "text-white/80 hover:text-white hover:bg-white/10"
+                  ? "text-gray-700 hover:text-primary hover:bg-gray-50"
+                  : "text-white/90 hover:text-white hover:bg-white/10"
               }`}
             >
               {link.label}
@@ -120,7 +110,6 @@ export default function Navbar() {
               { label: "Products", href: "/products" },
               { label: "GCC Solutions", href: "/global-capability-center" },
               { label: "Blogs", href: "/blogs" },
-              { label: "Case Studies", href: "/case-studies" },
               { label: "Portfolio", href: "/portfolio" },
               { label: "Pricing", href: "/pricing" },
               { label: "Contact Us", href: "/contact-us" },
@@ -130,8 +119,8 @@ export default function Navbar() {
                 href={link.href}
                 className={`px-4 py-3 rounded-lg text-sm font-medium transition-colors ${
                   location === link.href
-                    ? "text-primary bg-primary/5"
-                    : "text-gray-600 hover:text-primary hover:bg-gray-50"
+                    ? "text-primary bg-primary/5 font-semibold"
+                    : "text-gray-700 hover:text-primary hover:bg-gray-50"
                 }`}
               >
                 {link.label}
