@@ -52,11 +52,12 @@ export default function FAQ() {
             transition={{ duration: 0.7 }}
             className="relative"
           >
-            <div className="rounded-2xl overflow-hidden">
+            <div className="rounded-2xl overflow-hidden shadow-2xl">
               <img
-                src="https://www.enfycon.com/_next/image?url=%2Fimages%2Ffaq%2Ffaq.jpg&w=1200&q=75"
+                src="/images/faq/faq.jpg"
                 alt="FAQ"
                 className="w-full h-[520px] object-cover"
+                onError={(e) => { (e.currentTarget as HTMLImageElement).src = "https://www.enfycon.com/images/faq/faq.jpg"; }}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-background/50 to-transparent" />
             </div>

@@ -13,9 +13,10 @@ export default function About() {
       {/* Background accent */}
       <div className="absolute top-0 left-0 w-1/3 h-full opacity-[0.03] pointer-events-none">
         <img
-          src="https://www.enfycon.com/images/shape/pattern-3.svg"
+          src="/images/shape/pattern-3.svg"
           alt=""
           className="w-full h-full object-cover"
+          onError={(e) => { (e.currentTarget as HTMLImageElement).src = "https://www.enfycon.com/images/shape/pattern-3.svg"; }}
         />
       </div>
 
@@ -29,11 +30,12 @@ export default function About() {
             transition={{ duration: 0.7 }}
             className="relative"
           >
-            <div className="relative rounded-2xl overflow-hidden">
+            <div className="relative rounded-2xl overflow-hidden shadow-2xl">
               <img
-                src="https://www.enfycon.com/_next/image?url=%2Fimages%2Fabout%2Fabout-us.jpg&w=1200&q=75"
+                src="/images/about/about-us.jpg"
                 alt="About Enfycon"
                 className="w-full h-[520px] object-cover"
+                onError={(e) => { (e.currentTarget as HTMLImageElement).src = "https://www.enfycon.com/images/about/about-us.jpg"; }}
               />
               <div className="absolute inset-0 bg-gradient-to-tr from-primary/20 to-transparent" />
             </div>

@@ -5,7 +5,8 @@ const services = [
   {
     title: "AI Agentic Solutions",
     description: "Autonomous AI agents designed to optimize complex enterprise workflows and decision-making processes.",
-    image: "https://www.enfycon.com/_next/image?url=%2Fimages%2Fservice%2Fai-agentic-solutions.jpg&w=640&q=85",
+    image: "/images/service/ai-agentic-solutions.jpg",
+    fallback: "https://www.enfycon.com/images/service/ai-agentic-solutions.jpg",
     slug: "ai-agentic-solutions",
     icon: Bot,
     color: "from-violet-500 to-purple-600",
@@ -13,7 +14,8 @@ const services = [
   {
     title: "AI-First Platforms",
     description: "Build robust, scalable platforms with artificial intelligence at their core, not as an afterthought.",
-    image: "https://www.enfycon.com/_next/image?url=%2Fimages%2Fservice%2Fai-first-platforms.jpg&w=640&q=85",
+    image: "/images/service/ai-first-platforms.jpg",
+    fallback: "https://www.enfycon.com/images/service/ai-first-platforms.jpg",
     slug: "ai-first-platforms",
     icon: Cpu,
     color: "from-blue-500 to-indigo-600",
@@ -21,7 +23,8 @@ const services = [
   {
     title: "Cybersecurity Assessment",
     description: "Comprehensive security audits and penetration testing to fortify your digital infrastructure.",
-    image: "https://www.enfycon.com/_next/image?url=%2Fimages%2Fservice%2Fsecurity-assessment.jpg&w=640&q=85",
+    image: "/images/service/security-assessment.jpg",
+    fallback: "https://www.enfycon.com/images/service/security-assessment.jpg",
     slug: "cybersecurity",
     icon: Shield,
     color: "from-emerald-500 to-teal-600",
@@ -29,7 +32,8 @@ const services = [
   {
     title: "Enterprise Modernization",
     description: "Upgrade legacy systems to cloud-native architectures for unprecedented agility and scale.",
-    image: "https://www.enfycon.com/_next/image?url=%2Fimages%2Fservice%2Fenterprise-modernization..jpg&w=640&q=85",
+    image: "/images/service/enterprise-modernization.jpg",
+    fallback: "https://www.enfycon.com/images/service/enterprise-modernization.jpg",
     slug: "enterprise-modernization",
     icon: RefreshCw,
     color: "from-orange-500 to-amber-600",
@@ -37,7 +41,8 @@ const services = [
   {
     title: "US IT Staffing",
     description: "Connect with elite IT professionals. We source top-tier talent for your most critical technical roles.",
-    image: "https://www.enfycon.com/_next/image?url=%2Fimages%2Fservice%2Fus-it-staffing.png&w=640&q=85",
+    image: "/images/service/us-it-staffing.png",
+    fallback: "https://www.enfycon.com/images/service/us-it-staffing.png",
     slug: "it-staffing",
     icon: Users,
     color: "from-rose-500 to-pink-600",
@@ -45,7 +50,8 @@ const services = [
   {
     title: "Personalized Customer Engagement",
     description: "Leverage AI to deliver hyper-personalized experiences that drive customer loyalty.",
-    image: "https://www.enfycon.com/_next/image?url=%2Fimages%2Fservice%2Fpersonalized-customer-engagement.jpg&w=640&q=85",
+    image: "/images/service/personalized-customer-engagement.jpg",
+    fallback: "https://www.enfycon.com/images/service/personalized-customer-engagement.jpg",
     slug: "customer-engagement",
     icon: MessageSquare,
     color: "from-cyan-500 to-blue-600",
@@ -53,7 +59,8 @@ const services = [
   {
     title: "Social Media & Digital Strategy",
     description: "Data-driven social marketing and targeted campaign management to build strong brand presence.",
-    image: "https://www.enfycon.com/_next/image?url=%2Fimages%2Fservice%2Fsocial-media-marketing.jpg&w=640&q=85",
+    image: "/images/service/social-media-marketing.jpg",
+    fallback: "https://www.enfycon.com/images/service/social-media-marketing.jpg",
     slug: "social-media-marketing",
     icon: Share2,
     color: "from-pink-500 to-rose-600",
@@ -115,6 +122,7 @@ export default function Services() {
                   src={service.image}
                   alt={service.title}
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out"
+                  onError={(e) => { (e.currentTarget as HTMLImageElement).src = service.fallback; }}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
                 {/* Icon badge */}

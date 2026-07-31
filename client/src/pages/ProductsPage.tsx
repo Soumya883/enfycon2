@@ -12,6 +12,7 @@ export interface Product {
   tagline: string;
   description: string;
   image: string;
+  fallback: string;
   features: string[];
   gradient: string;
   badge: string;
@@ -24,7 +25,8 @@ const products: Product[] = [
     category: "Collaboration",
     tagline: "Unified Enterprise Communication & Automation",
     description: "Streamline enterprise communication with AI-driven workflow automation, automated task distribution, and real-time team collaboration intelligence.",
-    image: "https://www.enfycon.com/_next/image?url=%2Fimages%2Fproduct%2Fenfysync.jpg&w=828&q=85",
+    image: "/images/product/enfysync.jpg",
+    fallback: "https://www.enfycon.com/images/product/enfysync.jpg",
     features: [
       "AI-driven workspace channels",
       "Automated workflow bots",
@@ -40,7 +42,8 @@ const products: Product[] = [
     category: "AI/ML",
     tagline: "Speech Recognition & Conversational Intelligence",
     description: "Enterprise-grade voice AI that transforms voice data into structured actionable insights with natural language understanding across 30+ languages.",
-    image: "https://www.enfycon.com/_next/image?url=%2Fimages%2Fproduct%2Fivaak.jpg&w=828&q=85",
+    image: "/images/product/ivaak.jpg",
+    fallback: "https://www.enfycon.com/images/product/ivaak.jpg",
     features: [
       "Real-time voice transcription",
       "Multilingual intent recognition",
@@ -56,7 +59,8 @@ const products: Product[] = [
     category: "DevOps",
     tagline: "Autonomous Code Repair & Bug Remediation",
     description: "Accelerate software delivery with AI that detects code vulnerabilities, suggests real-time patches, and automates pull request reviews.",
-    image: "https://www.enfycon.com/_next/image?url=%2Fimages%2Fproduct%2Ftruefix.jpg&w=828&q=85",
+    image: "/images/product/truefix.jpg",
+    fallback: "https://www.enfycon.com/images/product/truefix.jpg",
     features: [
       "Automated static & dynamic code fix",
       "CI/CD pipeline security gates",
@@ -72,7 +76,8 @@ const products: Product[] = [
     category: "Security",
     tagline: "Privacy-First Identity & Anonymization Engine",
     description: "Protect sensitive customer and enterprise data using advanced differential privacy, zero-knowledge proofs, and automated data masking.",
-    image: "https://www.enfycon.com/_next/image?url=%2Fimages%2Fproduct%2Ficognito.jpg&w=828&q=85",
+    image: "/images/product/icognito.jpg",
+    fallback: "https://www.enfycon.com/images/product/icognito.jpg",
     features: [
       "Dynamic data masking & tokenization",
       "Zero-Trust identity verification",
@@ -88,7 +93,8 @@ const products: Product[] = [
     category: "Healthcare",
     tagline: "AI Dental Radiography & Patient Care Platform",
     description: "Empower dental practitioners with instant radiograph analysis, automated periodontitis grading, and intelligent appointment workflows.",
-    image: "https://www.enfycon.com/_next/image?url=%2Fimages%2Fproduct%2Fidental.jpg&w=828&q=85",
+    image: "/images/product/idental.jpg",
+    fallback: "https://www.enfycon.com/images/product/idental.jpg",
     features: [
       "AI X-ray & 3D scan analysis",
       "Automated caries & lesion detection",
@@ -104,7 +110,8 @@ const products: Product[] = [
     category: "Legal Tech",
     tagline: "Legal AI Assistant & Intelligent Contract Review",
     description: "Accelerate contract cycles by 70% with intelligent clause risk scoring, automated document drafting, and deep precedent discovery.",
-    image: "https://www.enfycon.com/_next/image?url=%2Fimages%2Fproduct%2Flexgen.jpg&w=828&q=85",
+    image: "/images/product/lexgen.jpg",
+    fallback: "https://www.enfycon.com/images/product/lexgen.jpg",
     features: [
       "Automated contract risk scoring",
       "Redlining & clause auto-suggestion",
@@ -120,7 +127,8 @@ const products: Product[] = [
     category: "Finance",
     tagline: "Quantitative Analytics & Risk Prediction Engine",
     description: "Empower financial institutions with real-time portfolio stress testing, predictive market trend modeling, and algorithmic risk mitigation.",
-    image: "https://www.enfycon.com/_next/image?url=%2Fimages%2Fproduct%2Fifin.jpg&w=828&q=85",
+    image: "/images/product/ifin.jpg",
+    fallback: "https://www.enfycon.com/images/product/ifin.jpg",
     features: [
       "Predictive market risk analytics",
       "Algorithmic portfolio rebalancing",
@@ -136,7 +144,8 @@ const products: Product[] = [
     category: "HR Tech",
     tagline: "Workforce Analytics & Talent Performance Engine",
     description: "Optimize organizational productivity through data-driven performance metrics, predictive attrition modeling, and automated skill mapping.",
-    image: "https://www.enfycon.com/_next/image?url=%2Fimages%2Fproduct%2Fperformance.jpg&w=828&q=85",
+    image: "/images/product/performance.jpg",
+    fallback: "https://www.enfycon.com/images/product/performance.jpg",
     features: [
       "Real-time productivity analytics",
       "Predictive turnover risk alerts",
@@ -152,7 +161,8 @@ const products: Product[] = [
     category: "Security",
     tagline: "Intelligent Workplace Access & Perimeter Control",
     description: "Transform physical security with facial recognition, contactless visitor management, and automated threat zone detection.",
-    image: "https://www.enfycon.com/_next/image?url=%2Fimages%2Fproduct%2Fiwac.jpg&w=828&q=85",
+    image: "/images/product/iwac.jpg",
+    fallback: "https://www.enfycon.com/images/product/iwac.jpg",
     features: [
       "Contactless facial biometric access",
       "Automated visitor kiosk integration",
@@ -184,11 +194,11 @@ export default function ProductsPage() {
       {/* Background Graphic Decorator */}
       <div
         className="absolute top-0 right-0 w-full h-[600px] pointer-events-none opacity-5 bg-no-repeat bg-right-top z-0"
-        style={{ backgroundImage: "url('https://www.enfycon.com/images/bg/map.svg')" }}
+        style={{ backgroundImage: "url('/images/bg/map.svg')" }}
       />
       <div
         className="absolute top-40 left-0 w-96 h-96 pointer-events-none opacity-10 bg-no-repeat z-0"
-        style={{ backgroundImage: "url('https://www.enfycon.com/images/shape/pattern-2.svg')" }}
+        style={{ backgroundImage: "url('/images/shape/pattern-2.svg')" }}
       />
 
       <Navbar />
@@ -241,7 +251,7 @@ export default function ProductsPage() {
           <div className="relative rounded-3xl overflow-hidden bg-gradient-to-r from-gray-900 via-blue-950 to-indigo-950 text-white p-8 md:p-12 border border-gray-800 shadow-2xl">
             <div
               className="absolute inset-0 opacity-15 bg-right bg-no-repeat"
-              style={{ backgroundImage: "url('https://www.enfycon.com/images/shape/pattern-3.svg')" }}
+              style={{ backgroundImage: "url('/images/shape/pattern-3.svg')" }}
             />
             <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
               <div className="lg:col-span-7">
@@ -268,11 +278,11 @@ export default function ProductsPage() {
               </div>
               <div className="lg:col-span-5 flex justify-center">
                 <img
-                  src="https://www.enfycon.com/images/logos/logo-large.webp"
+                  src="/images/logos/logo-large.webp"
                   alt="Enfycon Enterprise AI"
                   className="w-full max-w-sm h-auto rounded-2xl shadow-2xl border border-white/10 transform hover:scale-105 transition-transform duration-300"
                   onError={(e) => {
-                    (e.target as HTMLElement).style.display = "none";
+                    (e.currentTarget as HTMLImageElement).src = "https://www.enfycon.com/images/logos/logo-large.webp";
                   }}
                 />
               </div>
@@ -317,9 +327,7 @@ export default function ProductsPage() {
                         alt={product.name}
                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                         onError={(e) => {
-                          // Fallback styled placeholder if image fails to load
-                          const target = e.currentTarget;
-                          target.style.display = "none";
+                          (e.currentTarget as HTMLImageElement).src = product.fallback;
                         }}
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-80" />

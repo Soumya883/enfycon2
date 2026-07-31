@@ -7,7 +7,8 @@ const articles = [
     date: "July 27, 2026",
     author: "Enfycon AI Labs",
     category: "AI & Automation",
-    image: "https://wp.enfycon.com/wp-content/uploads/2026/07/ChatGPT-Image-Jul-27-2026-02_07_14-PM.png",
+    image: "/images/blog/blog-1.png",
+    fallback: "https://wp.enfycon.com/wp-content/uploads/2026/07/ChatGPT-Image-Jul-27-2026-02_07_14-PM.png",
     slug: "/blog/architecture-of-enterprise-agentic-ai",
   },
   {
@@ -15,7 +16,8 @@ const articles = [
     date: "July 23, 2026",
     author: "Cybersecurity Team",
     category: "Security",
-    image: "https://wp.enfycon.com/wp-content/uploads/2026/07/ChatGPT-Image-Jul-23-2026-02_17_54-PM-1.png",
+    image: "/images/blog/blog-2.png",
+    fallback: "https://wp.enfycon.com/wp-content/uploads/2026/07/ChatGPT-Image-Jul-23-2026-02_17_54-PM-1.png",
     slug: "/blog/zero-trust-cybersecurity-quantum-threats",
   },
   {
@@ -23,7 +25,8 @@ const articles = [
     date: "May 20, 2026",
     author: "Enterprise Solutions",
     category: "Modernization",
-    image: "https://wp.enfycon.com/wp-content/uploads/2026/05/ChatGPT-Image-May-20-2026-03_05_05-PM.png",
+    image: "/images/blog/blog-3.png",
+    fallback: "https://wp.enfycon.com/wp-content/uploads/2026/05/ChatGPT-Image-May-20-2026-03_05_05-PM.png",
     slug: "/blog/modernizing-legacy-financial-systems",
   },
   {
@@ -31,7 +34,8 @@ const articles = [
     date: "May 19, 2026",
     author: "Talent Acquisition",
     category: "IT Staffing",
-    image: "https://wp.enfycon.com/wp-content/uploads/2026/05/ChatGPT-Image-May-19-2026-10_12_47-AM.png",
+    image: "/images/blog/blog-4.png",
+    fallback: "https://wp.enfycon.com/wp-content/uploads/2026/05/ChatGPT-Image-May-19-2026-10_12_47-AM.png",
     slug: "/blog/us-it-staffing-trends-ai-devops",
   },
 ];
@@ -73,7 +77,7 @@ export default function LatestInsights() {
                   alt={article.title}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   onError={(e) => {
-                    (e.target as HTMLElement).style.display = "none";
+                    (e.currentTarget as HTMLImageElement).src = article.fallback;
                   }}
                 />
                 <div className="absolute top-3 left-3 bg-white/90 backdrop-blur-md px-3 py-1 rounded-full text-xs font-bold text-gray-900 shadow-sm">

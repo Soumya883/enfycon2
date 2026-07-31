@@ -15,17 +15,20 @@ const serviceCategories = [
       {
         title: "AI & Agentic Solutions Service",
         description: "Autonomous AI systems that independently execute complex enterprise workflows.",
-        image: "https://www.enfycon.com/_next/image?url=%2Fimages%2Fservice%2Fai-agentic-solutions.jpg&w=640&q=85"
+        image: "/images/service/ai-agentic-solutions.jpg",
+        fallback: "https://www.enfycon.com/images/service/ai-agentic-solutions.jpg"
       },
       {
         title: "AI-First Platforms Engineering",
         description: "Cloud-native platforms designed from the ground up with AI at their core.",
-        image: "https://www.enfycon.com/_next/image?url=%2Fimages%2Fservice%2Fai-first-platforms.jpg&w=640&q=85"
+        image: "/images/service/ai-first-platforms.jpg",
+        fallback: "https://www.enfycon.com/images/service/ai-first-platforms.jpg"
       },
       {
         title: "Personalized Customer Engagement",
         description: "AI-powered personalization engines for enhanced customer experiences.",
-        image: "https://www.enfycon.com/_next/image?url=%2Fimages%2Fservice%2Fpersonalized-customer-engagement.jpg&w=640&q=85"
+        image: "/images/service/personalized-customer-engagement.jpg",
+        fallback: "https://www.enfycon.com/images/service/personalized-customer-engagement.jpg"
       },
     ],
   },
@@ -39,17 +42,20 @@ const serviceCategories = [
       {
         title: "US IT Staffing & Technology Hiring",
         description: "End-to-end recruitment pipeline for US-based technology roles.",
-        image: "https://www.enfycon.com/_next/image?url=%2Fimages%2Fservice%2Fus-it-staffing.png&w=640&q=85"
+        image: "/images/service/us-it-staffing.png",
+        fallback: "https://www.enfycon.com/images/service/us-it-staffing.png"
       },
       {
         title: "Domestic IT Staffing",
         description: "Onshore talent acquisition with rapid deployment capabilities.",
-        image: "https://www.enfycon.com/_next/image?url=%2Fimages%2Fservice%2Fdomestic-it-staffing.png&w=640&q=85"
+        image: "/images/service/domestic-it-staffing.png",
+        fallback: "https://www.enfycon.com/images/service/domestic-it-staffing.png"
       },
       {
         title: "Offshore Dedicated Teams",
         description: "Build dedicated development teams with offshore expertise.",
-        image: "https://www.enfycon.com/_next/image?url=%2Fimages%2Fservice%2Foffshore-dedicated-teams.png&w=640&q=85"
+        image: "/images/service/offshore-dedicated-teams.png",
+        fallback: "https://www.enfycon.com/images/service/offshore-dedicated-teams.png"
       },
     ],
   },
@@ -63,17 +69,20 @@ const serviceCategories = [
       {
         title: "Enterprise Modernization & Cloud",
         description: "Migrate legacy systems to cloud-native architectures with zero downtime.",
-        image: "https://www.enfycon.com/_next/image?url=%2Fimages%2Fservice%2Fenterprise-modernization..jpg&w=640&q=85"
+        image: "/images/service/enterprise-modernization.jpg",
+        fallback: "https://www.enfycon.com/images/service/enterprise-modernization.jpg"
       },
       {
         title: "Advanced Analytics & Intelligence",
         description: "Predictive modeling, BI dashboards, and real-time analytics.",
-        image: "https://www.enfycon.com/_next/image?url=%2Fimages%2Fservice%2Fadvanced-analytics.jpg&w=640&q=85"
+        image: "/images/service/advanced-analytics.jpg",
+        fallback: "https://www.enfycon.com/images/service/advanced-analytics.jpg"
       },
       {
         title: "Data Engineering & Pipelines",
         description: "Robust data pipelines and automated ETL processes at scale.",
-        image: "https://www.enfycon.com/_next/image?url=%2Fimages%2Fservice%2Fdata-engineering.jpg&w=640&q=85"
+        image: "/images/service/data-engineering.jpg",
+        fallback: "https://www.enfycon.com/images/service/data-engineering.jpg"
       },
     ],
   },
@@ -87,17 +96,20 @@ const serviceCategories = [
       {
         title: "Security Assessment & Audits",
         description: "Penetration testing, vulnerability scanning, and security audits.",
-        image: "https://www.enfycon.com/_next/image?url=%2Fimages%2Fservice%2Fsecurity-assessment.jpg&w=640&q=85"
+        image: "/images/service/security-assessment.jpg",
+        fallback: "https://www.enfycon.com/images/service/security-assessment.jpg"
       },
       {
         title: "Operational Security Guidelines",
         description: "Implementation of NIST and ISO 27001 security frameworks.",
-        image: "https://www.enfycon.com/_next/image?url=%2Fimages%2Fservice%2Foperational-security.jpg&w=640&q=85"
+        image: "/images/service/operational-security.jpg",
+        fallback: "https://www.enfycon.com/images/service/operational-security.jpg"
       },
       {
         title: "Regulatory Compliance",
         description: "HIPAA, SOC2, GDPR, and industry-specific compliance solutions.",
-        image: "https://www.enfycon.com/_next/image?url=%2Fimages%2Fservice%2Fregulatory-compliance.jpg&w=640&q=85"
+        image: "/images/service/regulatory-compliance.jpg",
+        fallback: "https://www.enfycon.com/images/service/regulatory-compliance.jpg"
       },
     ],
   },
@@ -111,17 +123,20 @@ const serviceCategories = [
       {
         title: "Social Media Marketing",
         description: "Strategic social media campaigns across all major platforms.",
-        image: "https://www.enfycon.com/_next/image?url=%2Fimages%2Fservice%2Fsocial-media-marketing.jpg&w=640&q=85"
+        image: "/images/service/social-media-marketing.jpg",
+        fallback: "https://www.enfycon.com/images/service/social-media-marketing.jpg"
       },
       {
         title: "Performance Marketing",
         description: "ROI-driven paid advertising campaigns with precise targeting.",
-        image: "https://www.enfycon.com/_next/image?url=%2Fimages%2Fservice%2Fperformance-marketing.jpg&w=640&q=85"
+        image: "/images/service/performance-marketing.jpg",
+        fallback: "https://www.enfycon.com/images/service/performance-marketing.jpg"
       },
       {
         title: "SEO & Content Strategy",
         description: "Organic search optimization and content marketing excellence.",
-        image: "https://www.enfycon.com/_next/image?url=%2Fimages%2Fservice%2Fseo-marketing.jpg&w=640&q=85"
+        image: "/images/service/seo-marketing.jpg",
+        fallback: "https://www.enfycon.com/images/service/seo-marketing.jpg"
       },
     ],
   },
@@ -133,11 +148,11 @@ export default function ServicesPage() {
       {/* Background Graphic Decorator */}
       <div
         className="absolute top-0 right-0 w-full h-[600px] pointer-events-none opacity-5 bg-no-repeat bg-right-top z-0"
-        style={{ backgroundImage: "url('https://www.enfycon.com/images/bg/map.svg')" }}
+        style={{ backgroundImage: "url('/images/bg/map.svg')" }}
       />
       <div
         className="absolute top-60 left-0 w-96 h-96 pointer-events-none opacity-10 bg-no-repeat z-0"
-        style={{ backgroundImage: "url('https://www.enfycon.com/images/shape/pattern-2.svg')" }}
+        style={{ backgroundImage: "url('/images/shape/pattern-2.svg')" }}
       />
 
       <Navbar />
@@ -188,7 +203,7 @@ export default function ServicesPage() {
                         alt={service.title}
                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                         onError={(e) => {
-                          (e.target as HTMLElement).style.display = "none";
+                          (e.currentTarget as HTMLImageElement).src = service.fallback;
                         }}
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />

@@ -1,11 +1,11 @@
 import { motion } from "framer-motion";
 
 const brands = [
-  { src: "https://www.enfycon.com/images/brands/gen-brand-1.png", alt: "Partner 1" },
-  { src: "https://www.enfycon.com/images/brands/gen-brand-2.png", alt: "Partner 2" },
-  { src: "https://www.enfycon.com/images/brands/gen-brand-3.png", alt: "Partner 3" },
-  { src: "https://www.enfycon.com/images/brands/gen-brand-4.png", alt: "Partner 4" },
-  { src: "https://www.enfycon.com/images/brands/gen-brand-5.png", alt: "Partner 5" },
+  { src: "/images/brands/gen-brand-1.png", fallback: "https://www.enfycon.com/images/brands/gen-brand-1.png", alt: "Partner 1" },
+  { src: "/images/brands/gen-brand-2.png", fallback: "https://www.enfycon.com/images/brands/gen-brand-2.png", alt: "Partner 2" },
+  { src: "/images/brands/gen-brand-3.png", fallback: "https://www.enfycon.com/images/brands/gen-brand-3.png", alt: "Partner 3" },
+  { src: "/images/brands/gen-brand-4.png", fallback: "https://www.enfycon.com/images/brands/gen-brand-4.png", alt: "Partner 4" },
+  { src: "/images/brands/gen-brand-5.png", fallback: "https://www.enfycon.com/images/brands/gen-brand-5.png", alt: "Partner 5" },
 ];
 
 export default function BrandCarousel() {
@@ -47,7 +47,10 @@ export default function BrandCarousel() {
                   <img
                     src={brand.src}
                     alt={brand.alt}
-                    className="h-10 md:h-14 object-contain grayscale hover:grayscale-0 transition-all duration-500 opacity-50 hover:opacity-100"
+                    className="h-10 md:h-14 object-contain grayscale hover:grayscale-0 transition-all duration-500 opacity-70 hover:opacity-100"
+                    onError={(e) => {
+                      (e.currentTarget as HTMLImageElement).src = brand.fallback;
+                    }}
                   />
                 </div>
               ))}
