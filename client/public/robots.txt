@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+
+# Disallow admin and private routes
+Disallow: /admin
+Disallow: /404
+
+# Sitemap location
+Sitemap: https://enfycon2-main.vercel.app/sitemap.xml
