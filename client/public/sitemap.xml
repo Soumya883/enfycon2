@@ -4,150 +4,123 @@
         xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
 
-  <!-- ===== CORE / HIGH PRIORITY ===== -->
+  <!-- ===== CORE PAGES (Priority 1.0 – 0.90) ===== -->
+  <url><loc>https://enfycon2-main.vercel.app/</loc><lastmod>2026-08-03</lastmod><changefreq>daily</changefreq><priority>1.0</priority></url>
+  <url><loc>https://enfycon2-main.vercel.app/about</loc><lastmod>2026-08-03</lastmod><changefreq>weekly</changefreq><priority>0.95</priority></url>
+  <url><loc>https://enfycon2-main.vercel.app/services</loc><lastmod>2026-08-03</lastmod><changefreq>weekly</changefreq><priority>0.94</priority></url>
+  <url><loc>https://enfycon2-main.vercel.app/global-capability-center</loc><lastmod>2026-08-03</lastmod><changefreq>weekly</changefreq><priority>0.93</priority></url>
+  <url><loc>https://enfycon2-main.vercel.app/products</loc><lastmod>2026-08-03</lastmod><changefreq>weekly</changefreq><priority>0.92</priority></url>
+  <url><loc>https://enfycon2-main.vercel.app/contact-us</loc><lastmod>2026-08-03</lastmod><changefreq>weekly</changefreq><priority>0.91</priority></url>
 
-  <!-- Homepage -->
-  <url>
-    <loc>https://enfycon2-main.vercel.app/</loc>
-    <lastmod>2026-08-03</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
-  </url>
+  <!-- ===== SOLUTIONS & OFFERINGS (Priority 0.85 – 0.80) ===== -->
+  <url><loc>https://enfycon2-main.vercel.app/pricing</loc><lastmod>2026-08-03</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://enfycon2-main.vercel.app/portfolio</loc><lastmod>2026-08-03</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://enfycon2-main.vercel.app/industries</loc><lastmod>2026-08-03</lastmod><changefreq>monthly</changefreq><priority>0.80</priority></url>
+  <url><loc>https://enfycon2-main.vercel.app/tools</loc><lastmod>2026-08-03</lastmod><changefreq>monthly</changefreq><priority>0.80</priority></url>
 
-  <!-- About -->
-  <url>
-    <loc>https://enfycon2-main.vercel.app/about</loc>
-    <lastmod>2026-08-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
+  <!-- Services Sub-pages -->
+  <url><loc>https://enfycon2-main.vercel.app/services#ai-agentic-solutions</loc><lastmod>2026-08-03</lastmod><changefreq>monthly</changefreq><priority>0.80</priority></url>
+  <url><loc>https://enfycon2-main.vercel.app/services#ai-first-platforms</loc><lastmod>2026-08-03</lastmod><changefreq>monthly</changefreq><priority>0.80</priority></url>
+  <url><loc>https://enfycon2-main.vercel.app/services#cybersecurity</loc><lastmod>2026-08-03</lastmod><changefreq>monthly</changefreq><priority>0.80</priority></url>
+  <url><loc>https://enfycon2-main.vercel.app/services#enterprise-modernization</loc><lastmod>2026-08-03</lastmod><changefreq>monthly</changefreq><priority>0.80</priority></url>
+  <url><loc>https://enfycon2-main.vercel.app/services#it-staffing</loc><lastmod>2026-08-03</lastmod><changefreq>monthly</changefreq><priority>0.80</priority></url>
 
-  <!-- Services -->
-  <url>
-    <loc>https://enfycon2-main.vercel.app/services</loc>
-    <lastmod>2026-08-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
+  <!-- Products Sub-pages -->
+  <url><loc>https://enfycon2-main.vercel.app/products#icognito-ai</loc><lastmod>2026-08-03</lastmod><changefreq>monthly</changefreq><priority>0.80</priority></url>
+  <url><loc>https://enfycon2-main.vercel.app/products#idental-ai</loc><lastmod>2026-08-03</lastmod><changefreq>monthly</changefreq><priority>0.80</priority></url>
+  <url><loc>https://enfycon2-main.vercel.app/products#lexgenie-ai</loc><lastmod>2026-08-03</lastmod><changefreq>monthly</changefreq><priority>0.80</priority></url>
+  <url><loc>https://enfycon2-main.vercel.app/products#quantfin-ai</loc><lastmod>2026-08-03</lastmod><changefreq>monthly</changefreq><priority>0.80</priority></url>
+  <url><loc>https://enfycon2-main.vercel.app/products#performanceedge-ai</loc><lastmod>2026-08-03</lastmod><changefreq>monthly</changefreq><priority>0.80</priority></url>
+  <url><loc>https://enfycon2-main.vercel.app/products#iwac-ai</loc><lastmod>2026-08-03</lastmod><changefreq>monthly</changefreq><priority>0.80</priority></url>
+  <url><loc>https://enfycon2-main.vercel.app/products#ivaak-ai</loc><lastmod>2026-08-03</lastmod><changefreq>monthly</changefreq><priority>0.80</priority></url>
+  <url><loc>https://enfycon2-main.vercel.app/products#truefix-ai</loc><lastmod>2026-08-03</lastmod><changefreq>monthly</changefreq><priority>0.80</priority></url>
+  <url><loc>https://enfycon2-main.vercel.app/products#enfysync</loc><lastmod>2026-08-03</lastmod><changefreq>monthly</changefreq><priority>0.80</priority></url>
 
-  <!-- Contact -->
-  <url>
-    <loc>https://enfycon2-main.vercel.app/contact-us</loc>
-    <lastmod>2026-08-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
+  <!-- Industries Sub-pages -->
+  <url><loc>https://enfycon2-main.vercel.app/industries#banking</loc><lastmod>2026-08-03</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://enfycon2-main.vercel.app/industries#government</loc><lastmod>2026-08-03</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://enfycon2-main.vercel.app/industries#finance</loc><lastmod>2026-08-03</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://enfycon2-main.vercel.app/industries#healthcare</loc><lastmod>2026-08-03</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://enfycon2-main.vercel.app/industries#human-resource</loc><lastmod>2026-08-03</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://enfycon2-main.vercel.app/industries#legal</loc><lastmod>2026-08-03</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://enfycon2-main.vercel.app/industries#supply-chain-logistics</loc><lastmod>2026-08-03</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://enfycon2-main.vercel.app/industries#manufacturing</loc><lastmod>2026-08-03</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://enfycon2-main.vercel.app/industries#tourism</loc><lastmod>2026-08-03</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
 
-  <!-- ===== SOLUTIONS & OFFERINGS ===== -->
+  <!-- AI Tools Sub-pages -->
+  <url><loc>https://enfycon2-main.vercel.app/tools/resume-analyzer</loc><lastmod>2026-08-03</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://enfycon2-main.vercel.app/tools/candidate-fit-score</loc><lastmod>2026-08-03</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://enfycon2-main.vercel.app/tools/interview-simulator</loc><lastmod>2026-08-03</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://enfycon2-main.vercel.app/tools/skill-gap-analyzer</loc><lastmod>2026-08-03</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://enfycon2-main.vercel.app/tools/candidate-availability-predictor</loc><lastmod>2026-08-03</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://enfycon2-main.vercel.app/tools/bench-resource-tracker</loc><lastmod>2026-08-03</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://enfycon2-main.vercel.app/tools/hiring-risk-analyzer</loc><lastmod>2026-08-03</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://enfycon2-main.vercel.app/tools/interview-questions-generator</loc><lastmod>2026-08-03</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://enfycon2-main.vercel.app/tools/resume-vs-jd-match</loc><lastmod>2026-08-03</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://enfycon2-main.vercel.app/tools/offer-acceptance-predictor</loc><lastmod>2026-08-03</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://enfycon2-main.vercel.app/tools/passive-candidate-finder</loc><lastmod>2026-08-03</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
 
-  <!-- Products -->
-  <url>
-    <loc>https://enfycon2-main.vercel.app/products</loc>
-    <lastmod>2026-08-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-  </url>
+  <!-- ===== COMPANY PAGES (Priority 0.70) ===== -->
+  <url><loc>https://enfycon2-main.vercel.app/team</loc><lastmod>2026-08-03</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://enfycon2-main.vercel.app/our-culture</loc><lastmod>2026-08-03</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://enfycon2-main.vercel.app/philosophy</loc><lastmod>2026-08-03</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://enfycon2-main.vercel.app/csr</loc><lastmod>2026-08-03</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://enfycon2-main.vercel.app/career</loc><lastmod>2026-08-03</lastmod><changefreq>weekly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://enfycon2-main.vercel.app/code-of-ethics</loc><lastmod>2026-08-03</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://enfycon2-main.vercel.app/media-kit</loc><lastmod>2026-08-03</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://enfycon2-main.vercel.app/candidate-awareness-notice</loc><lastmod>2026-08-03</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://enfycon2-main.vercel.app/publications</loc><lastmod>2026-08-03</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://enfycon2-main.vercel.app/blogs</loc><lastmod>2026-08-03</lastmod><changefreq>weekly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://enfycon2-main.vercel.app/site-map</loc><lastmod>2026-08-03</lastmod><changefreq>monthly</changefreq><priority>0.50</priority></url>
+  <url><loc>https://enfycon2-main.vercel.app/case-studies</loc><lastmod>2026-08-03</lastmod><changefreq>monthly</changefreq><priority>0.65</priority></url>
 
-  <!-- Global Capability Center -->
-  <url>
-    <loc>https://enfycon2-main.vercel.app/global-capability-center</loc>
-    <lastmod>2026-08-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-  </url>
+  <!-- ===== LEGAL (Priority 0.40) ===== -->
+  <url><loc>https://enfycon2-main.vercel.app/privacy-policy</loc><lastmod>2026-08-03</lastmod><changefreq>yearly</changefreq><priority>0.40</priority></url>
+  <url><loc>https://enfycon2-main.vercel.app/terms-and-conditions</loc><lastmod>2026-08-03</lastmod><changefreq>yearly</changefreq><priority>0.40</priority></url>
+  <url><loc>https://enfycon2-main.vercel.app/cookie-policy</loc><lastmod>2026-08-03</lastmod><changefreq>yearly</changefreq><priority>0.40</priority></url>
 
-  <!-- Pricing -->
-  <url>
-    <loc>https://enfycon2-main.vercel.app/pricing</loc>
-    <lastmod>2026-08-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-  </url>
-
-  <!-- Industries -->
-  <url>
-    <loc>https://enfycon2-main.vercel.app/industries</loc>
-    <lastmod>2026-08-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <!-- Portfolio / Case Studies -->
-  <url>
-    <loc>https://enfycon2-main.vercel.app/portfolio</loc>
-    <lastmod>2026-08-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <!-- Case Studies (redirects to /portfolio) -->
-  <url>
-    <loc>https://enfycon2-main.vercel.app/case-studies</loc>
-    <lastmod>2026-08-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
-  </url>
-
-  <!-- ===== CONTENT / INSIGHTS ===== -->
-
-  <!-- Blog Listing -->
-  <url>
-    <loc>https://enfycon2-main.vercel.app/blogs</loc>
-    <lastmod>2026-08-03</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.75</priority>
-  </url>
-
-  <!-- ===== COMPANY / CULTURE ===== -->
-
-  <!-- Our Culture -->
-  <url>
-    <loc>https://enfycon2-main.vercel.app/our-culture</loc>
-    <lastmod>2026-08-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <!-- Philosophy (alias for Our Culture) -->
-  <url>
-    <loc>https://enfycon2-main.vercel.app/philosophy</loc>
-    <lastmod>2026-08-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.65</priority>
-  </url>
-
-  <!-- CSR -->
-  <url>
-    <loc>https://enfycon2-main.vercel.app/csr</loc>
-    <lastmod>2026-08-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.65</priority>
-  </url>
-
-  <!-- Careers -->
-  <url>
-    <loc>https://enfycon2-main.vercel.app/career</loc>
-    <lastmod>2026-08-03</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <!-- ===== LEGAL ===== -->
-
-  <!-- Privacy Policy -->
-  <url>
-    <loc>https://enfycon2-main.vercel.app/privacy-policy</loc>
-    <lastmod>2026-08-03</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.4</priority>
-  </url>
-
-  <!-- Terms and Conditions -->
-  <url>
-    <loc>https://enfycon2-main.vercel.app/terms-and-conditions</loc>
-    <lastmod>2026-08-03</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.4</priority>
-  </url>
+  <!-- ===== BLOG POSTS (Priority 0.70 weekly) ===== -->
+  <url><loc>https://enfycon2-main.vercel.app/blogs/topcon-hjt-or-tandem-cells-which-technology-will-lead-the-next-decade</loc><lastmod>2026-07-27</lastmod><changefreq>weekly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://enfycon2-main.vercel.app/blogs/why-intelligent-workforce-platforms-are-replacing-traditional-hr-software-in-2026</loc><lastmod>2026-07-23</lastmod><changefreq>weekly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://enfycon2-main.vercel.app/blogs/e-lms-electronic-land-management-system-the-future-of-land-governance</loc><lastmod>2026-07-23</lastmod><changefreq>weekly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://enfycon2-main.vercel.app/blogs/tech-stack-to-make-a-qsr-scale-a-data-driven-system-oriented-approach</loc><lastmod>2026-05-19</lastmod><changefreq>weekly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://enfycon2-main.vercel.app/blogs/why-arent-you-getting-quality-candidates-the-complete-guide-to-fixing-hiring-mistakes-that-are-killing-your-growth</loc><lastmod>2026-05-04</lastmod><changefreq>weekly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://enfycon2-main.vercel.app/blogs/world-quantum-day-2026-the-race-to-quantum-advantage-has-begun-complete-guide-to-quantum-computing-careers-and-future-impact</loc><lastmod>2026-04-16</lastmod><changefreq>weekly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://enfycon2-main.vercel.app/blogs/claude-code-leak-what-happened-why-it-matters-and-the-ripple-effects-on-the-ai-industry</loc><lastmod>2026-04-02</lastmod><changefreq>weekly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://enfycon2-main.vercel.app/blogs/automating-indias-education-system-building-a-data-driven-talent-intelligence-engine</loc><lastmod>2026-04-01</lastmod><changefreq>weekly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://enfycon2-main.vercel.app/blogs/adobe-x-nvidia-powering-the-next-era-of-generative-ai-in-creativity-marketing</loc><lastmod>2026-03-19</lastmod><changefreq>weekly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://enfycon2-main.vercel.app/blogs/cloud-based-training-platform-the-future-of-scalable-education-and-global-learning</loc><lastmod>2026-03-25</lastmod><changefreq>weekly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://enfycon2-main.vercel.app/blogs/saas-learning-management-system-the-ultimate-guide-to-scalable-digital-learning-in-2026</loc><lastmod>2026-03-17</lastmod><changefreq>weekly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://enfycon2-main.vercel.app/blogs/the-problem-with-instagram-removing-end-to-end-encryption-what-users-need-to-know</loc><lastmod>2026-03-16</lastmod><changefreq>weekly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://enfycon2-main.vercel.app/blogs/air-cargo-revolution-optimizing-logistics-with-ai-and-automation</loc><lastmod>2026-04-09</lastmod><changefreq>weekly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://enfycon2-main.vercel.app/blogs/revolutionizing-ocean-freight-modern-supply-chain-systems-for-sea-transport</loc><lastmod>2026-03-11</lastmod><changefreq>weekly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://enfycon2-main.vercel.app/blogs/why-vibe-marketing-is-changing-modern-brand-consumer-relationships</loc><lastmod>2026-03-11</lastmod><changefreq>weekly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://enfycon2-main.vercel.app/blogs/how-are-hackers-using-seo-to-spread-malware-through-github-repositories</loc><lastmod>2026-03-11</lastmod><changefreq>weekly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://enfycon2-main.vercel.app/blogs/how-legal-tech-is-transforming-law-firms-and-compliance-management</loc><lastmod>2026-03-11</lastmod><changefreq>weekly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://enfycon2-main.vercel.app/blogs/hangzhous-3-7b-ai-bet-how-chinas-multi-vendor-chip-ecosystem-is-reshaping-the-global-ai-race</loc><lastmod>2026-03-10</lastmod><changefreq>weekly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://enfycon2-main.vercel.app/blogs/quantum-computing-how-it-could-change-the-future-of-technology-with-real-world-business-impact</loc><lastmod>2026-03-10</lastmod><changefreq>weekly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://enfycon2-main.vercel.app/blogs/beyond-pilots-how-to-operationalize-innovation-in-large-enterprises</loc><lastmod>2026-03-10</lastmod><changefreq>weekly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://enfycon2-main.vercel.app/blogs/building-smart-supply-networks-the-digital-transformation-of-india-and-africa</loc><lastmod>2026-03-10</lastmod><changefreq>weekly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://enfycon2-main.vercel.app/blogs/from-paper-to-platform-the-rise-of-esign-and-indias-digital-trust-ecosystem</loc><lastmod>2026-03-06</lastmod><changefreq>weekly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://enfycon2-main.vercel.app/blogs/from-idea-to-impact-how-enfycons-low-code-no-code-framework-accelerates-digital-innovation</loc><lastmod>2026-03-17</lastmod><changefreq>weekly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://enfycon2-main.vercel.app/blogs/from-destinations-to-data-how-smart-technologies-are-redefining-modern-tourism</loc><lastmod>2026-03-17</lastmod><changefreq>weekly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://enfycon2-main.vercel.app/blogs/decentralized-by-design-how-blockchain-guarantees-data-integrity-in-a-trustless-world</loc><lastmod>2026-03-02</lastmod><changefreq>weekly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://enfycon2-main.vercel.app/blogs/digital-warehouse-receipts-in-africa-transforming-agricultural-trade-finance</loc><lastmod>2026-03-02</lastmod><changefreq>weekly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://enfycon2-main.vercel.app/blogs/powering-smarter-procurement-how-e-auction-platforms-bridge-minerals-and-markets</loc><lastmod>2026-03-05</lastmod><changefreq>weekly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://enfycon2-main.vercel.app/blogs/climate-smart-agriculture-how-crop-analytics-is-shaping-the-future-of-food</loc><lastmod>2026-03-05</lastmod><changefreq>weekly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://enfycon2-main.vercel.app/blogs/integrated-legal-monitoring-systems-turning-litigation-data-into-governance-insight</loc><lastmod>2026-02-27</lastmod><changefreq>weekly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://enfycon2-main.vercel.app/blogs/the-hidden-cost-of-ai-adoption-no-one-talks-about</loc><lastmod>2026-02-26</lastmod><changefreq>weekly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://enfycon2-main.vercel.app/blogs/smart-cities-in-action-how-iot-is-powering-safer-smarter-urban-governance</loc><lastmod>2026-03-17</lastmod><changefreq>weekly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://enfycon2-main.vercel.app/blogs/iot-in-mining-how-smart-sensors-are-reducing-costs-and-improving-safety</loc><lastmod>2026-03-10</lastmod><changefreq>weekly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://enfycon2-main.vercel.app/blogs/what-are-identity-threats-and-why-do-they-matter-in-cybersecurity</loc><lastmod>2026-03-11</lastmod><changefreq>weekly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://enfycon2-main.vercel.app/blogs/modern-leadership-in-a-complex-world-a-practical-guide-for-leaders-who-want-results</loc><lastmod>2026-03-06</lastmod><changefreq>weekly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://enfycon2-main.vercel.app/blogs/open-source-ai-vs-closed-models-what-businesses-really-prefer-a-deep-strategic-analysis</loc><lastmod>2026-02-18</lastmod><changefreq>weekly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://enfycon2-main.vercel.app/blogs/ai-in-healthcare-how-artificial-intelligence-is-transforming-modern-medicine</loc><lastmod>2026-02-16</lastmod><changefreq>weekly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://enfycon2-main.vercel.app/blogs/which-are-the-largest-it-staffing-companies-and-firms-in-2023</loc><lastmod>2026-02-10</lastmod><changefreq>weekly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://enfycon2-main.vercel.app/blogs/how-can-software-development-team-augmentation-boost-your-projects-success</loc><lastmod>2026-06-03</lastmod><changefreq>weekly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://enfycon2-main.vercel.app/blogs/what-are-the-advantages-of-the-dedicated-team-model-for-projects</loc><lastmod>2026-02-05</lastmod><changefreq>weekly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://enfycon2-main.vercel.app/blogs/how-can-dedicated-offshore-development-centers-boost-your-business-efficiency</loc><lastmod>2026-02-17</lastmod><changefreq>weekly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://enfycon2-main.vercel.app/blogs/why-hire-a-dedicated-software-team-for-your-development-needs</loc><lastmod>2026-02-10</lastmod><changefreq>weekly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://enfycon2-main.vercel.app/blogs/how-to-find-great-temporary-work-opportunities-and-temp-jobs-nearby</loc><lastmod>2026-02-10</lastmod><changefreq>weekly</changefreq><priority>0.70</priority></url>
 
 </urlset>

@@ -23,10 +23,19 @@ import AdminPage from "./pages/AdminPage";
 import BlogDetailPage from "./pages/BlogDetailPage";
 import PricingPage from "./pages/PricingPage";
 import PortfolioPage from "./pages/PortfolioPage";
+import TeamPage from "./pages/TeamPage";
+import CookiePolicyPage from "./pages/CookiePolicyPage";
+import MediaKitPage from "./pages/MediaKitPage";
+import CandidateAwarenessPage from "./pages/CandidateAwarenessPage";
+import CodeOfEthicsPage from "./pages/CodeOfEthicsPage";
+import PublicationsPage from "./pages/PublicationsPage";
+import ToolsPage from "./pages/ToolsPage";
+import SiteMapPage from "./pages/SiteMapPage";
 
 function Router() {
   return (
     <Switch>
+      {/* Core Pages */}
       <Route path={"/"} component={Home} />
       <Route path={"/about"} component={AboutPage} />
       <Route path={"/services"} component={ServicesPage} />
@@ -35,22 +44,45 @@ function Router() {
       <Route path={"/blogs"} component={BlogPage} />
       <Route path={"/products"} component={ProductsPage} />
       <Route path={"/global-capability-center"} component={GCCPage} />
-      <Route path={"/our-culture"} component={CulturePage} />
-      <Route path={"/csr"} component={CSRPage} />
-      <Route path={"/career"} component={CareerPage} />
-      <Route path={"/philosophy"} component={CulturePage} />
-      <Route path={"/privacy-policy"} component={PrivacyPage} />
-      <Route path={"/terms-and-conditions"} component={TermsPage} />
-      <Route path={"/blog/:slug"} component={BlogDetailPage} />
-      <Route path={"/case-studies"}>{() => <Redirect to="/portfolio" />}</Route>
       <Route path={"/pricing"} component={PricingPage} />
       <Route path={"/portfolio"} component={PortfolioPage} />
+
+      {/* Company Pages */}
+      <Route path={"/team"} component={TeamPage} />
+      <Route path={"/our-culture"} component={CulturePage} />
+      <Route path={"/philosophy"} component={CulturePage} />
+      <Route path={"/csr"} component={CSRPage} />
+      <Route path={"/career"} component={CareerPage} />
+      <Route path={"/code-of-ethics"} component={CodeOfEthicsPage} />
+      <Route path={"/media-kit"} component={MediaKitPage} />
+      <Route path={"/candidate-awareness-notice"} component={CandidateAwarenessPage} />
+
+      {/* Knowledge & Tools */}
+      <Route path={"/publications"} component={PublicationsPage} />
+      <Route path={"/tools"} component={ToolsPage} />
+      <Route path={"/tools/:slug"} component={ToolsPage} />
+      <Route path={"/site-map"} component={SiteMapPage} />
+
+      {/* Legal */}
+      <Route path={"/privacy-policy"} component={PrivacyPage} />
+      <Route path={"/terms-and-conditions"} component={TermsPage} />
+      <Route path={"/cookie-policy"} component={CookiePolicyPage} />
+
+      {/* Blog Detail */}
+      <Route path={"/blog/:slug"} component={BlogDetailPage} />
+      <Route path={"/blogs/:slug"} component={BlogDetailPage} />
+
+      {/* Redirects */}
+      <Route path={"/case-studies"}>{() => <Redirect to="/portfolio" />}</Route>
+
+      {/* Admin & Error */}
       <Route path={"/admin"} component={AdminPage} />
       <Route path={"/404"} component={NotFound} />
       <Route component={NotFound} />
     </Switch>
   );
 }
+
 
 function App() {
   return (
