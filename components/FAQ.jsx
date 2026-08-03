@@ -1,104 +1,142 @@
-import React from 'react';
-import { Phone, ChevronDown, Star } from 'lucide-react';
+'use client';
+
+import React, { useState } from 'react';
+import { Phone, ChevronDown, Star, HelpCircle, MessageSquare } from 'lucide-react';
+
+const faqs = [
+  {
+    q: "How does Enfycon deploy AI Agentic Solutions into existing legacy enterprise systems?",
+    a: "We deploy lightweight SOC 2-compliant AI proxy layers and custom API adapters. Our autonomous agents interface with your existing ERP, CRM, or data lake without requiring disruptive overhauls to your legacy codebase."
+  },
+  {
+    q: "What is your screening process for IT Staffing and engineering talent?",
+    a: "Every engineer undergoes a rigorous 4-stage evaluation: live system architecture design, algorithmic code assessment, security practice verification, and soft skills evaluation. Only the top 1% are presented to our enterprise clients."
+  },
+  {
+    q: "How do you ensure data privacy and compliance when fine-tuning LLMs?",
+    a: "We utilize dedicated single-tenant VPCs with zero data retention guarantees. Your proprietary enterprise datasets never train public foundation models and remain strictly encrypted at rest and in transit."
+  },
+  {
+    q: "Can Enfycon manage full end-to-end cloud migrations and cybersecurity hardening?",
+    a: "Yes. Our cloud engineering team handles multi-cloud migrations across AWS, Azure, and GCP, alongside Zero-Trust security perimeter architecture, IAM configuration, and 24/7 SOC monitoring."
+  },
+  {
+    q: "Where is Enfycon headquartered and what regions do you serve?",
+    a: "Enfycon is headquartered in Flower Mound, Texas, with global technical hubs across North America, Europe, and Asia-Pacific to provide round-the-clock SLA support."
+  }
+];
 
 export default function FAQ() {
+  const [openIndex, setOpenIndex] = useState(0);
+
+  const toggleFaq = (idx) => {
+    setOpenIndex(openIndex === idx ? -1 : idx);
+  };
+
   return (
-    <section className="py-24 bg-white">
-      <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+    <section className="py-24 bg-slate-50 border-t border-slate-200/80">
+      <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
         
-        {/* Left Side: Images & Floating CTA */}
-        <div className="relative">
-          <div className="rounded-2xl overflow-hidden shadow-2xl relative z-10 w-[90%] md:w-[85%]">
+        {/* Left Side: Image, Experience Badge & Testimonial */}
+        <div className="lg:col-span-5 relative">
+          
+          <div className="rounded-3xl overflow-hidden shadow-2xl relative z-10 border border-slate-200">
             <img 
               src="https://images.unsplash.com/photo-1573164713988-8665fc963095?q=80&w=2000&auto=format&fit=crop" 
-              alt="Team Meeting" 
-              className="w-full h-[600px] object-cover"
+              alt="Enfycon Executive Meeting" 
+              className="w-full h-[520px] object-cover"
             />
+            <div className="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-transparent to-transparent" />
           </div>
           
-          {/* Blue Overlay Box */}
-          <div className="absolute right-0 md:-right-8 top-1/3 -translate-y-1/2 z-20 bg-[#3b5bdb] text-white p-6 md:p-8 rounded-2xl shadow-xl w-60 md:w-72 border-4 border-white">
-            <h3 className="text-xl md:text-3xl font-bold mb-4 leading-tight">
-              10 Years Of<br />Experience
-            </h3>
-            <div className="flex items-center gap-4 bg-white/10 p-4 rounded-xl">
-              <div className="bg-white text-[#3b5bdb] p-3 rounded-full">
+          {/* Floating Experience Callout */}
+          <div className="absolute -right-4 top-10 z-20 bg-gradient-to-br from-blue-600 to-indigo-700 text-white p-6 md:p-8 rounded-3xl shadow-2xl w-64 border-4 border-white">
+            <div className="text-3xl font-extrabold mb-1">10+ Years</div>
+            <div className="text-xs uppercase tracking-wider font-bold text-blue-200 mb-4">Enterprise Excellence</div>
+            <div className="flex items-center gap-3 bg-white/10 p-3 rounded-2xl backdrop-blur-md">
+              <div className="w-10 h-10 rounded-full bg-white text-[#2563eb] flex items-center justify-center font-bold">
                 <Phone className="w-5 h-5" />
               </div>
               <div>
-                <p className="text-xs text-white/80 uppercase tracking-wider mb-1">Call Us Anytime</p>
-                <p className="font-bold text-white">+1 (555) 123-4567</p>
+                <p className="text-[10px] text-blue-200 uppercase font-bold">Direct Line</p>
+                <p className="font-bold text-white text-sm">+1 201.201.7078</p>
               </div>
             </div>
           </div>
 
-          {/* Testimonial Box */}
-          <div className="absolute -bottom-8 right-4 z-20 bg-white p-6 rounded-2xl shadow-xl w-[90%] md:w-[85%] flex flex-col md:flex-row gap-5 items-center border border-gray-100">
-            <div className="text-[#3b5bdb]">
-              <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                <path d="M14.017 21L16.41 14.536H10.973V3H21V14.536L18.514 21H14.017ZM3.017 21L5.41 14.536H0V3H10.027V14.536L7.514 21H3.017Z" />
-              </svg>
+          {/* Testimonial Badge */}
+          <div className="absolute -bottom-8 left-4 right-4 z-20 bg-white p-6 rounded-3xl shadow-xl border border-slate-200/80">
+            <div className="flex items-center gap-1 text-amber-400 mb-2">
+              <Star className="w-4 h-4 fill-current" />
+              <Star className="w-4 h-4 fill-current" />
+              <Star className="w-4 h-4 fill-current" />
+              <Star className="w-4 h-4 fill-current" />
+              <Star className="w-4 h-4 fill-current" />
             </div>
-            <div>
-              <p className="text-gray-600 text-sm mb-3 italic">"Enfycon revolutionized our data pipeline. Their AI integration is flawless and their technical mastery is unparalleled."</p>
-              <div className="flex justify-between items-center border-t border-gray-100 pt-3">
-                <div className="flex items-center gap-3">
-                  <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=150&auto=format&fit=crop" alt="Kevin Martin" className="w-10 h-10 rounded-full object-cover" />
-                  <div>
-                    <h5 className="font-bold text-black text-sm">Kevin Martin</h5>
-                    <p className="text-xs text-gray-500">CTO, DataScale</p>
-                  </div>
-                </div>
-                <div className="flex text-yellow-400">
-                  <Star className="w-3 h-3 fill-current" />
-                  <Star className="w-3 h-3 fill-current" />
-                  <Star className="w-3 h-3 fill-current" />
-                  <Star className="w-3 h-3 fill-current" />
-                  <Star className="w-3 h-3 fill-current" />
-                </div>
+            <p className="text-slate-700 text-xs sm:text-sm font-medium leading-relaxed italic mb-3">
+              "Enfycon transformed our data architecture. Their AI agents streamlined operations while maintaining 100% security compliance."
+            </p>
+            <div className="flex items-center gap-3">
+              <img 
+                src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=150&auto=format&fit=crop" 
+                alt="Client CTO" 
+                className="w-8 h-8 rounded-full object-cover" 
+              />
+              <div>
+                <div className="text-xs font-bold text-slate-900">Kevin Martin</div>
+                <div className="text-[10px] text-slate-500 font-semibold">Chief Technology Officer, GlobalFin</div>
               </div>
             </div>
           </div>
+
         </div>
 
         {/* Right Side: FAQ Accordion */}
-        <div className="lg:pl-10 flex flex-col justify-center relative z-10">
-          <div className="inline-flex items-center gap-2 bg-blue-50 text-[#3b5bdb] px-4 py-1.5 rounded-full text-sm font-bold mb-6 self-start">
-            <span className="w-2 h-2 rounded-full bg-[#3b5bdb]"></span>
-            Help & FAQs
+        <div className="lg:col-span-7">
+          
+          <div className="inline-flex items-center gap-2 bg-blue-100/70 text-[#2563eb] px-4 py-1.5 rounded-full text-xs font-bold mb-6">
+            <HelpCircle className="w-4 h-4" />
+            Frequently Asked Questions
           </div>
-          <h2 className="text-4xl md:text-5xl font-bold text-black mb-10 leading-tight">
-            We Are Here To Help You Out.
+
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 mb-10 tracking-tight leading-tight">
+            We Are Here To <span className="bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">Guide Your Roadmap</span>
           </h2>
 
           <div className="space-y-4">
-            {/* FAQ 1 - Open */}
-            <div className="border border-gray-200 rounded-2xl p-6 bg-gray-50 shadow-sm">
-              <div className="flex justify-between items-center cursor-pointer">
-                <h4 className="font-bold text-black text-lg pr-4">How can I integrate AI into my business?</h4>
-                <div className="bg-[#3b5bdb] text-white rounded-full p-1.5"><ChevronDown className="w-5 h-5 transform rotate-180" /></div>
-              </div>
-              <p className="text-gray-600 mt-4 leading-relaxed text-sm">
-                We start with a comprehensive technical audit of your existing infrastructure, identify high-impact workflows, and systematically deploy autonomous agents to augment your workforce without disrupting current operations.
-              </p>
-            </div>
+            {faqs.map((faq, idx) => {
+              const isOpen = openIndex === idx;
+              return (
+                <div 
+                  key={idx}
+                  onClick={() => toggleFaq(idx)}
+                  className={`rounded-2xl border transition-all duration-300 cursor-pointer overflow-hidden ${
+                    isOpen 
+                      ? 'bg-white border-blue-500 shadow-md ring-1 ring-blue-500/20' 
+                      : 'bg-white/80 border-slate-200 hover:border-slate-300'
+                  }`}
+                >
+                  <div className="p-6 flex items-center justify-between gap-4">
+                    <h4 className="font-bold text-slate-900 text-base sm:text-lg pr-2">
+                      {faq.q}
+                    </h4>
+                    <div className={`w-8 h-8 rounded-full flex items-center justify-center shrink-0 transition-transform duration-300 ${
+                      isOpen ? 'bg-[#2563eb] text-white rotate-180' : 'bg-slate-100 text-slate-500'
+                    }`}>
+                      <ChevronDown className="w-5 h-5" />
+                    </div>
+                  </div>
 
-            {/* FAQ 2 - Closed */}
-            <div className="border border-gray-100 rounded-2xl p-6 hover:border-gray-200 transition-all cursor-pointer">
-              <div className="flex justify-between items-center">
-                <h4 className="font-bold text-gray-700 text-lg hover:text-black">What kind of IT Staffing do you provide?</h4>
-                <div className="bg-gray-100 text-gray-500 rounded-full p-1.5"><ChevronDown className="w-5 h-5" /></div>
-              </div>
-            </div>
-
-            {/* FAQ 3 - Closed */}
-            <div className="border border-gray-100 rounded-2xl p-6 hover:border-gray-200 transition-all cursor-pointer">
-              <div className="flex justify-between items-center">
-                <h4 className="font-bold text-gray-700 text-lg hover:text-black">Do you offer Cybersecurity audits?</h4>
-                <div className="bg-gray-100 text-gray-500 rounded-full p-1.5"><ChevronDown className="w-5 h-5" /></div>
-              </div>
-            </div>
+                  {isOpen && (
+                    <div className="px-6 pb-6 pt-0 text-slate-600 text-sm sm:text-base leading-relaxed border-t border-slate-100 mt-2 pt-4">
+                      {faq.a}
+                    </div>
+                  )}
+                </div>
+              );
+            })}
           </div>
+
         </div>
 
       </div>
