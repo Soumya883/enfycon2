@@ -14,7 +14,7 @@ const cardVariants = {
   hidden: { opacity: 0, y: 32 },
   visible: (i: number) => ({
     opacity: 1, y: 0,
-    transition: { duration: 0.55, delay: i * 0.09, ease: [0.22, 1, 0.36, 1] },
+    transition: { duration: 0.55, delay: i * 0.09, ease: "easeOut" },
   }),
 };
 
@@ -51,13 +51,11 @@ export default function Services() {
           {services.map((service, i) => (
             <motion.div
               key={i}
-              custom={i}
-              variants={cardVariants}
-              initial="hidden"
-              whileInView="visible"
+              initial={{ opacity: 0, y: 32 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
+              transition={{ duration: 0.55, delay: i * 0.09 }}
               whileHover={{ y: -16, boxShadow: `0 36px 80px ${service.glow}` }}
-              transition={{ type: "spring", stiffness: 260, damping: 22 }}
               className="group bg-white rounded-[20px] border border-slate-200/80 overflow-hidden transition-colors duration-500 hover:border-indigo-400 flex flex-col relative cursor-default"
             >
               {/* Hover gradient accent line on left */}

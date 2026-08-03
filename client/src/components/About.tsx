@@ -38,7 +38,7 @@ const statItemVariants = {
   hidden: { opacity: 0, y: 20 },
   visible: (i: number) => ({
     opacity: 1, y: 0,
-    transition: { duration: 0.5, delay: i * 0.1, ease: [0.22, 1, 0.36, 1] },
+    transition: { duration: 0.5, delay: i * 0.1, ease: "easeOut" },
   }),
 };
 
@@ -143,11 +143,10 @@ export default function About() {
               {stats.map((stat, i) => (
                 <motion.div
                   key={i}
-                  custom={i}
-                  variants={statItemVariants}
-                  initial="hidden"
-                  whileInView="visible"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: i * 0.1 }}
                   className="text-left"
                 >
                   <CountUp target={stat.value} suffix={stat.suffix} />

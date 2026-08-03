@@ -86,7 +86,7 @@ export default function LogoPreloader() {
           key="futuristic-preloader"
           initial={{ opacity: 1 }}
           exit={{ clipPath: "circle(0% at 50% 50%)", opacity: 0 }}
-          transition={{ duration: 0.9, ease: [0.76, 0, 0.24, 1] }}
+          transition={{ duration: 0.9, ease: "easeInOut" }}
           className="fixed inset-0 z-[99999] flex flex-col items-center justify-center overflow-hidden select-none"
           style={{ background: "radial-gradient(ellipse at center, #0A0F2C 0%, #040714 60%, #000308 100%)" }}
         >
@@ -177,7 +177,7 @@ export default function LogoPreloader() {
               <motion.div
                 initial={{ scale: 0.6, opacity: 0, y: 30 }}
                 animate={{ scale: 1, opacity: 1, y: 0 }}
-                transition={{ duration: 0.9, ease: [0.34, 1.56, 0.64, 1] }}
+                transition={{ duration: 0.9, ease: "easeOut" }}
                 className="absolute inset-0 flex items-center justify-center"
               >
                 <div className={`relative overflow-hidden bg-slate-950/90 backdrop-blur-3xl border p-8 rounded-[28px] ${glitch ? "border-cyan-300/80 shadow-[0_0_100px_rgba(0,212,255,0.7)]" : "border-cyan-400/30 shadow-[0_0_70px_rgba(0,212,255,0.4)]"}`}

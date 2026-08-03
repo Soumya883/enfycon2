@@ -1,28 +1,18 @@
 import { useRef } from "react";
-import { motion, useScroll, useTransform, useSpring, useMotionValue, AnimatePresence } from "framer-motion";
-import { ArrowRight, Sparkles, Star, Rocket, Lock, Zap } from "lucide-react";
+import { motion, useScroll, useTransform, useSpring, useMotionValue } from "framer-motion";
+import { ArrowRight, Sparkles, Star, Rocket, Lock, Zap, CheckCircle2 } from "lucide-react";
 
-const particleDots = Array.from({ length: 16 }, (_, i) => ({
+const particleDots = Array.from({ length: 20 }, (_, i) => ({
   x: (i * 17 + 5) % 100,
   y: (i * 23 + 10) % 100,
-  dx: (i % 2 === 0 ? 1 : -1) * ((i % 5) + 1) * 3,
+  dx: (i % 2 === 0 ? 1 : -1) * ((i % 5) + 1) * 2,
   size: 1.5 + (i % 4) * 0.8,
-  duration: 8 + (i % 7) * 2,
-  delay: (i % 6) * 0.8,
-  opacity: 0.2 + (i % 5) * 0.12,
+  duration: 6 + (i % 7) * 2,
+  delay: (i % 6) * 0.6,
+  opacity: 0.3 + (i % 5) * 0.1,
 }));
 
-// Word-by-word stagger variants
-const sentenceVariants = {
-  hidden: {},
-  visible: { transition: { staggerChildren: 0.09, delayChildren: 0.3 } },
-};
-const wordVariants = {
-  hidden: { opacity: 0, y: 28, filter: "blur(8px)" },
-  visible: { opacity: 1, y: 0, filter: "blur(0px)", transition: { duration: 0.55, ease: [0.22, 1, 0.36, 1] } },
-};
-
-// Magnetic button hook component
+// Magnetic button component
 function MagneticButton({ children, className, onClick }: { children: React.ReactNode; className: string; onClick?: () => void }) {
   const ref = useRef<HTMLButtonElement>(null);
   const x = useMotionValue(0);
@@ -60,8 +50,8 @@ export default function Hero() {
   const containerRef = useRef<HTMLElement>(null);
   const { scrollY } = useScroll();
 
-  // Parallax: video moves up slowly on scroll
-  const videoY = useTransform(scrollY, [0, 600], [0, -80]);
+  // Subtle parallax move on scroll
+  const videoY = useTransform(scrollY, [0, 600], [0, -50]);
 
   const scrollTo = (id: string) => {
     const el = document.querySelector(id);
@@ -71,57 +61,30 @@ export default function Hero() {
   return (
     <section
       ref={containerRef}
-      className="relative min-h-[92vh] lg:min-h-screen w-full flex items-center justify-center overflow-hidden bg-[#080c1e] py-32 lg:py-40"
+      className="relative min-h-[95vh] lg:min-h-screen w-full flex items-center justify-center overflow-hidden bg-slate-950 py-32 lg:py-40"
     >
-      {/* Background Video with parallax */}
-      <motion.div style={{ y: videoY }} className="absolute top-0 left-0 w-full h-full z-0">
+      {/* Crisp Background Video - No Blue Overlay Blocking It! */}
+      <motion.div style={{ y: videoY }} className="absolute inset-0 w-full h-full z-0">
         <video
-          autoPlay loop muted playsInline
-          preload="none"
-          className="w-full h-full object-cover opacity-80"
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="w-full h-full object-cover opacity-95 scale-[1.02]"
         >
           <source src="/video/hero-video.mp4" type="video/mp4" />
           <source src="https://www.enfycon.com/video/ENFYCON%20VIDEO%20HERO.mp4" type="video/mp4" />
         </video>
       </motion.div>
 
-      {/* Dark Overlay — slightly darker for crisper text readability */}
-      <div
-        className="absolute top-0 left-0 w-full h-full z-10 pointer-events-none"
-        style={{ background: "linear-gradient(rgba(8,12,30,.88), rgba(8,12,30,.82))" }}
-      />
+      {/* Subtle Natural Vignette Overlay - Protects text readability without turning blue or masking video */}
+      <div className="absolute inset-0 z-10 pointer-events-none bg-gradient-to-b from-slate-950/70 via-slate-950/30 to-slate-950/85" />
 
-      {/* Slow-drifting gradient light orbs */}
-      <motion.div
-        className="absolute top-1/4 left-10 w-[500px] h-[500px] bg-indigo-600/30 rounded-full blur-[140px] pointer-events-none z-10"
-        style={{ willChange: "transform, opacity" }}
-        animate={{ x: [0, 40, -20, 0], y: [0, -30, 20, 0] }}
-        transition={{ duration: 18, repeat: Infinity, ease: "easeInOut" }}
-      />
-      <motion.div
-        className="absolute bottom-1/4 right-10 w-[500px] h-[500px] bg-cyan-500/25 rounded-full blur-[140px] pointer-events-none z-10"
-        style={{ willChange: "transform, opacity" }}
-        animate={{ x: [0, -35, 25, 0], y: [0, 25, -20, 0] }}
-        transition={{ duration: 22, repeat: Infinity, ease: "easeInOut", delay: 2 }}
-      />
-      <motion.div
-        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[380px] h-[380px] bg-purple-600/15 rounded-full blur-[110px] pointer-events-none z-10"
-        animate={{ scale: [1, 1.35, 1], opacity: [0.4, 0.75, 0.4] }}
-        transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }}
-      />
+      {/* Very faint ambient cyan glow accents at edges (non-blocking) */}
+      <div className="absolute top-1/4 -left-20 w-80 h-80 bg-indigo-500/15 rounded-full blur-[120px] pointer-events-none z-10" />
+      <div className="absolute bottom-1/4 -right-20 w-80 h-80 bg-cyan-500/15 rounded-full blur-[120px] pointer-events-none z-10" />
 
-      {/* Animated diagonal gradient stripe overlay — adds premium depth */}
-      <motion.div
-        className="absolute inset-0 z-10 pointer-events-none"
-        style={{
-          background: "linear-gradient(125deg, rgba(79,70,229,0.08) 0%, transparent 40%, rgba(0,212,255,0.06) 70%, transparent 100%)",
-        }}
-        animate={{ opacity: [0.6, 1, 0.6] }}
-        transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
-      />
-
-
-      {/* Floating Background Particles */}
+      {/* Floating particles overlay */}
       <div className="absolute inset-0 pointer-events-none z-10 overflow-hidden">
         {particleDots.map((p, i) => (
           <motion.div
@@ -129,134 +92,121 @@ export default function Hero() {
             initial={{ x: `${p.x}%`, y: `${p.y}%`, opacity: p.opacity }}
             animate={{
               x: [`${p.x}%`, `${p.x + p.dx}%`, `${p.x}%`],
-              y: [`${p.y}%`, `${(p.y + 25) % 100}%`, `${p.y}%`],
-              opacity: [p.opacity, p.opacity * 2.5, p.opacity],
+              y: [`${p.y}%`, `${(p.y + 20) % 100}%`, `${p.y}%`],
+              opacity: [p.opacity, p.opacity * 2.2, p.opacity],
             }}
             transition={{ duration: p.duration, delay: p.delay, repeat: Infinity, ease: "easeInOut" }}
             style={{ width: p.size, height: p.size }}
-            className="absolute rounded-full bg-cyan-400 shadow-[0_0_8px_#00D4FF]"
+            className="absolute rounded-full bg-cyan-400 shadow-[0_0_10px_#00D4FF]"
           />
         ))}
       </div>
 
       {/* Hero Content */}
-      <div className="relative z-20 text-center px-6 max-w-6xl mx-auto pt-16">
+      <div className="relative z-20 text-center px-4 md:px-6 max-w-5xl mx-auto pt-16">
 
         {/* Badge */}
         <motion.div
-          initial={{ opacity: 0, scale: 0.88, y: 15 }}
+          initial={{ opacity: 0, scale: 0.9, y: 15 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
-          transition={{ duration: 0.55, delay: 0.1 }}
-          className="inline-flex items-center gap-2 bg-gradient-to-r from-indigo-500/20 via-purple-500/20 to-cyan-500/20 backdrop-blur-xl border border-cyan-400/30 rounded-full px-6 py-2 mb-8 shadow-[0_0_30px_rgba(0,212,255,0.2)]"
+          transition={{ duration: 0.6, delay: 0.1 }}
+          className="inline-flex items-center gap-2 bg-slate-900/80 backdrop-blur-xl border border-cyan-400/40 rounded-full px-5 py-2 mb-8 shadow-[0_0_25px_rgba(0,212,255,0.25)]"
         >
-          <Sparkles className="w-4 h-4 text-cyan-400 animate-spin" />
+          <Sparkles className="w-4 h-4 text-cyan-400 animate-pulse" />
           <span className="text-white text-xs md:text-sm font-extrabold tracking-widest uppercase">
-            Awwwards Grade Enterprise AI & Technology
+            Enterprise AI & Next-Gen IT Solutions
           </span>
         </motion.div>
 
-        {/* Radial glow halo behind the headline — the 10/10 "wow" touch */}
-        <div className="relative inline-block mb-8">
-          <div className="absolute inset-0 -m-12 bg-[radial-gradient(ellipse_at_center,rgba(99,102,241,0.2)_0%,transparent_70%)] blur-2xl pointer-events-none" />
+        {/* Main Headline */}
+        <motion.h1
+          initial={{ opacity: 0, y: 25 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.25 }}
+          className="text-5xl md:text-7xl lg:text-8xl font-black text-white tracking-tight leading-[1.05] mb-8 drop-shadow-[0_10px_30px_rgba(0,0,0,0.8)]"
+        >
+          Enterprise{" "}
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 via-purple-300 to-cyan-400">
+            Intelligence
+          </span>{" "}
+          Redefined
+        </motion.h1>
 
-          {/* Staggered word-by-word heading reveal */}
-          <motion.h1
-            variants={sentenceVariants}
-            initial="hidden"
-            animate="visible"
-            className="text-6xl md:text-7xl lg:text-8xl font-extrabold text-white tracking-[-2px] leading-[1.05] drop-shadow-2xl relative z-10"
-          >
-            {["Enterprise"].map((w) => (
-              <motion.span key={w} variants={wordVariants} className="inline-block mr-[0.25em]">{w}</motion.span>
-            ))}
-            <motion.span
-              variants={wordVariants}
-              className="inline-block mr-[0.25em] text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 via-purple-400 to-cyan-400"
-            >
-              Intelligence
-            </motion.span>
-            <br />
-            {["Redefined"].map((w) => (
-              <motion.span key={w} variants={wordVariants} className="inline-block">{w}</motion.span>
-            ))}
-          </motion.h1>
-        </div>
-
-
-        {/* Subtitle — larger for better readability on big screens */}
+        {/* Subtitle */}
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.65 }}
-          className="text-xl md:text-2xl lg:text-[1.4rem] text-slate-200 mb-12 max-w-3xl mx-auto leading-relaxed font-light drop-shadow-md tracking-wide"
+          transition={{ duration: 0.6, delay: 0.45 }}
+          className="text-lg md:text-2xl text-slate-100 max-w-3xl mx-auto mb-12 leading-relaxed font-normal drop-shadow-[0_4px_12px_rgba(0,0,0,0.9)]"
         >
-          Delivering precision AI solutions, robust cybersecurity, and elite IT
-          staffing for modern Fortune 500 enterprises.
+          Empowering global leaders with precision AI agents, zero-trust cybersecurity, and elite US IT staffing solutions.
         </motion.p>
 
-
-        {/* Magnetic CTA Buttons */}
+        {/* Call-to-action buttons */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.8 }}
-          className="flex flex-col sm:flex-row gap-6 justify-center items-center"
+          transition={{ duration: 0.6, delay: 0.6 }}
+          className="flex flex-col sm:flex-row gap-5 justify-center items-center mb-16"
         >
           <MagneticButton
             onClick={() => scrollTo("#services")}
-            className="w-full sm:w-auto bg-gradient-to-r from-indigo-600 via-purple-600 to-cyan-500 text-white px-10 py-5 rounded-[14px] font-extrabold text-base transition-all duration-300 shadow-[0_10px_40px_rgba(79,70,229,0.55)] hover:shadow-[0_20px_60px_rgba(0,212,255,0.9)] hover:scale-[1.02] flex items-center justify-center gap-2 group cursor-pointer"
+            className="w-full sm:w-auto bg-gradient-to-r from-indigo-600 via-purple-600 to-cyan-500 hover:from-indigo-500 hover:to-cyan-400 text-white px-9 py-4 rounded-xl font-black text-base shadow-[0_10px_35px_rgba(79,70,229,0.6)] hover:shadow-[0_15px_45px_rgba(0,212,255,0.8)] hover:scale-[1.02] flex items-center justify-center gap-2.5 transition-all duration-300 cursor-pointer"
           >
-            <span>Explore Solutions</span>
-            <ArrowRight className="w-5 h-5 group-hover:translate-x-1.5 transition-transform duration-300" />
+            <span>Explore Our Solutions</span>
+            <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
           </MagneticButton>
 
           <MagneticButton
             onClick={() => scrollTo("#contact")}
-            className="w-full sm:w-auto bg-white/10 backdrop-blur-xl border border-white/30 text-white px-10 py-5 rounded-[14px] font-extrabold text-base transition-all duration-300 hover:bg-white/20 hover:border-cyan-400/60 hover:shadow-[0_10px_40px_rgba(0,212,255,0.25)] hover:scale-[1.02] flex items-center justify-center gap-2 cursor-pointer"
+            className="w-full sm:w-auto bg-slate-900/80 backdrop-blur-xl border border-white/30 hover:border-cyan-400/80 text-white px-9 py-4 rounded-xl font-black text-base hover:bg-slate-800/90 shadow-xl hover:shadow-[0_10px_30px_rgba(0,212,255,0.3)] hover:scale-[1.02] flex items-center justify-center gap-2.5 transition-all duration-300 cursor-pointer"
           >
             <Zap className="w-5 h-5 text-cyan-400" />
-            <span>Partner With Us</span>
+            <span>Schedule a Demo</span>
           </MagneticButton>
-
         </motion.div>
 
-        {/* Hero Trust Badges */}
+        {/* Glassmorphic Metrics / Trust Badges */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 1.0, duration: 0.6 }}
-          className="flex flex-wrap items-center justify-center gap-4 sm:gap-6 mt-16 text-xs text-slate-200 font-extrabold"
+          transition={{ delay: 0.8, duration: 0.6 }}
+          className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto"
         >
           {[
-            { icon: <Star className="w-4 h-4 fill-amber-400 text-amber-400" />, text: "Trusted by 200+ Businesses", hover: "hover:border-amber-400/50" },
-            { icon: <Rocket className="w-4 h-4 text-cyan-400" />, text: "500+ Successful Projects", hover: "hover:border-cyan-400/50" },
-            { icon: <Lock className="w-4 h-4 text-emerald-400" />, text: "Enterprise-Grade Security", hover: "hover:border-emerald-400/50" },
-          ].map((badge, i) => (
-            <motion.div
+            { metric: "200+", label: "Enterprise Clients", icon: Star, color: "text-amber-400" },
+            { metric: "500+", label: "AI Deployments", icon: Rocket, color: "text-cyan-400" },
+            { metric: "99.9%", label: "Platform Uptime", icon: CheckCircle2, color: "text-emerald-400" },
+            { metric: "SOC-2", label: "Certified Security", icon: Lock, color: "text-indigo-400" },
+          ].map((item, i) => (
+            <div
               key={i}
-              whileHover={{ scale: 1.05, y: -2 }}
-              className={`flex items-center gap-2 bg-slate-900/80 backdrop-blur-xl px-5 py-2.5 rounded-full border border-slate-700/80 shadow-lg ${badge.hover} transition-all duration-300`}
+              className="bg-slate-900/75 backdrop-blur-xl border border-slate-700/80 hover:border-cyan-400/50 p-4 rounded-2xl shadow-lg transition-all duration-300 hover:scale-105"
             >
-              {badge.icon}
-              <span>{badge.text}</span>
-            </motion.div>
+              <div className="flex items-center justify-center gap-2 mb-1">
+                <item.icon className={`w-4 h-4 ${item.color}`} />
+                <span className="text-xl md:text-2xl font-black text-white tracking-tight">{item.metric}</span>
+              </div>
+              <p className="text-xs font-bold text-slate-300 uppercase tracking-wider">{item.label}</p>
+            </div>
           ))}
         </motion.div>
+
       </div>
 
       {/* Scroll indicator */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ delay: 1.5, duration: 0.5 }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20"
+        transition={{ delay: 1.2, duration: 0.5 }}
+        className="absolute bottom-6 left-1/2 -translate-x-1/2 z-20 hidden md:block"
       >
         <motion.div
-          animate={{ y: [0, 10, 0] }}
+          animate={{ y: [0, 8, 0] }}
           transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-          className="w-7 h-11 rounded-full border-2 border-cyan-400/50 flex items-start justify-center pt-2 backdrop-blur-md bg-slate-950/40 shadow-[0_0_20px_rgba(0,212,255,0.4)]"
+          className="w-6 h-10 rounded-full border-2 border-cyan-400/60 flex items-start justify-center pt-2 backdrop-blur-md bg-slate-950/50 shadow-[0_0_15px_rgba(0,212,255,0.4)]"
         >
-          <div className="w-1.5 h-3 rounded-full bg-cyan-400 animate-pulse" />
+          <div className="w-1.5 h-2.5 rounded-full bg-cyan-400 animate-pulse" />
         </motion.div>
       </motion.div>
     </section>

@@ -60,7 +60,7 @@ export default function FAQ() {
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  transition={{ duration: 0.45, delay: i * 0.07, ease: [0.22, 1, 0.36, 1] }}
+                  transition={{ duration: 0.45, delay: i * 0.07, ease: "easeOut" }}
                 >
                   <AccordionItem
                     value={`faq-${i}`}

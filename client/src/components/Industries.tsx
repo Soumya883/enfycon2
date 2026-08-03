@@ -163,7 +163,7 @@ export default function Industries() {
             initial={{ scaleX: 0 }}
             whileInView={{ scaleX: 1 }}
             viewport={{ once: true }}
-            transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1], delay: 0.3 }}
+            transition={{ duration: 1.2, ease: "easeOut", delay: 0.3 }}
             style={{ transformOrigin: "left" }}
             className="hidden lg:block absolute top-[52px] left-[60px] right-[60px] h-0.5 bg-gradient-to-r from-indigo-500 via-purple-500 to-cyan-400 z-0 opacity-50"
           />
