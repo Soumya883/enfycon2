@@ -58,7 +58,7 @@ export default function ContactForm() {
               <Clock className="w-3.5 h-3.5 text-indigo-600" />
               Response Guarantee: &lt; 2 Hours
             </div>
-            <h2 className="text-4xl md:text-6xl font-extrabold text-slate-900 mb-6 tracking-tight leading-[1.1]">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-slate-900 mb-6 tracking-tight leading-[1.1]">
               Ready to{" "}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 via-purple-600 to-cyan-500">
                 Architect Your Growth?

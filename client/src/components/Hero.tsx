@@ -123,7 +123,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 25 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.25 }}
-          className="text-5xl md:text-7xl lg:text-8xl font-black text-white tracking-tight leading-[1.05] mb-8 drop-shadow-[0_10px_30px_rgba(0,0,0,0.8)]"
+          className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white tracking-tight leading-[1.15] mb-6 drop-shadow-[0_10px_30px_rgba(0,0,0,0.8)]"
         >
           Enterprise{" "}
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 via-purple-300 to-cyan-400">
@@ -137,7 +137,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.45 }}
-          className="text-lg md:text-2xl text-slate-100 max-w-3xl mx-auto mb-12 leading-relaxed font-normal drop-shadow-[0_4px_12px_rgba(0,0,0,0.9)]"
+          className="text-base md:text-lg lg:text-xl text-slate-200 max-w-3xl mx-auto mb-10 leading-relaxed font-normal drop-shadow-[0_4px_12px_rgba(0,0,0,0.9)]"
         >
           Empowering global leaders with precision AI agents, zero-trust cybersecurity, and elite US IT staffing solutions.
         </motion.p>

@@ -83,7 +83,7 @@ export default function Industries() {
             <Sparkles className="w-3.5 h-3.5 text-cyan-400" />
             Vertical Expertise
           </div>
-          <h2 className="text-4xl md:text-6xl font-extrabold text-white mb-6 tracking-tight">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-white mb-6 tracking-tight">
             Powering Next-Gen{" "}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 via-purple-400 to-cyan-400">
               Industry Verticals
@@ -152,7 +152,7 @@ export default function Industries() {
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-purple-500/10 border border-purple-400/30 text-purple-300 text-xs font-extrabold uppercase tracking-widest mb-4">
             Structured Execution
           </div>
-          <h2 className="text-4xl md:text-5xl font-extrabold text-white tracking-tight">
+          <h2 className="text-3xl md:text-4xl lg:text-[2.5rem] font-extrabold text-white tracking-tight">
             Our Enterprise <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-cyan-400">Execution Framework</span>
           </h2>
         </motion.div>

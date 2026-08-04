@@ -69,7 +69,7 @@ export default function Testimonials() {
           <p className="text-cyan-400 font-extrabold tracking-[0.25em] uppercase text-xs mb-3">
             Client Success Stories
           </p>
-          <h2 className="text-4xl md:text-6xl font-black text-white tracking-tight mb-4">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-white tracking-tight mb-4">
             Trusted by Leaders <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 via-purple-400 to-cyan-400">Worldwide</span>
           </h2>
           <p className="text-slate-300 text-base md:text-lg max-w-2xl mx-auto">
