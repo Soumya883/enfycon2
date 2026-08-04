@@ -481,23 +481,42 @@ export default function ProductDetailPage() {
                   </div>
                 </div>
 
-                <h2 className="text-2xl md:text-3xl font-extrabold mb-4">Product Overview</h2>
-                <p className="text-slate-300 leading-relaxed font-light mb-6">
-                  {product.description}
-                </p>
+                <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
+                  <div className="md:col-span-7">
+                    <h2 className="text-2xl md:text-3xl font-extrabold mb-4">Product Overview</h2>
+                    <p className="text-slate-300 leading-relaxed font-light mb-6">
+                      {product.description}
+                    </p>
 
-                {/* Business Impact Metrics */}
-                <div className="grid grid-cols-3 gap-4 pt-6 border-t border-slate-800">
-                  {product.businessImpact.map((item, idx) => (
-                    <div key={idx} className="text-center md:text-left">
-                      <p className="text-2xl md:text-3xl font-black text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-indigo-400">
-                        {item.metric}
-                      </p>
-                      <p className="text-[10px] md:text-xs font-bold text-slate-500 uppercase tracking-wider mt-1">
-                        {item.label}
-                      </p>
+                    {/* Business Impact Metrics */}
+                    <div className="grid grid-cols-3 gap-4 pt-6 border-t border-slate-800">
+                      {product.businessImpact.map((item, idx) => (
+                        <div key={idx} className="text-center md:text-left">
+                          <p className="text-2xl md:text-3xl font-black text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-indigo-400">
+                            {item.metric}
+                          </p>
+                          <p className="text-[10px] md:text-xs font-bold text-slate-500 uppercase tracking-wider mt-1">
+                            {item.label}
+                          </p>
+                        </div>
+                      ))}
                     </div>
-                  ))}
+                  </div>
+
+                  <div className="md:col-span-5">
+                    <div className="relative rounded-2xl overflow-hidden border border-slate-800 bg-slate-950 aspect-[4/3] group shadow-xl">
+                      <div className="absolute inset-0 bg-indigo-600/10 mix-blend-overlay group-hover:opacity-0 transition-opacity duration-500 z-10 pointer-events-none" />
+                      <img
+                        src={product.image}
+                        alt={product.name}
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 opacity-90 group-hover:opacity-100"
+                        onError={(e) => {
+                          (e.currentTarget as HTMLImageElement).src = product.fallback;
+                        }}
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent z-10" />
+                    </div>
+                  </div>
                 </div>
               </motion.div>
 
