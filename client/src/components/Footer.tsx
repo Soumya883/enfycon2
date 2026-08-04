@@ -1,4 +1,4 @@
-import { Linkedin, Twitter, ArrowUp, Mail, CheckCircle2, Heart, ShieldCheck, Award } from "lucide-react";
+import { Linkedin, Twitter, ArrowUp, Mail, CheckCircle2, Heart, ShieldCheck, Award, MessageCircle, Facebook, Phone } from "lucide-react";
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { trpc } from "@/lib/trpc";
@@ -120,6 +120,9 @@ export default function Footer() {
               {[
                 { href: "https://linkedin.com/company/enfycon", Icon: Linkedin, label: "LinkedIn" },
                 { href: "https://twitter.com/enfycon", Icon: Twitter, label: "Twitter" },
+                { href: "https://wa.me/12012017078", Icon: MessageCircle, label: "WhatsApp" },
+                { href: "https://m.me/enfycon", Icon: Facebook, label: "Messenger" },
+                { href: "tel:+12012017078", Icon: Phone, label: "Phone" },
               ].map(({ href, Icon, label }) => (
                 <a
                   key={label} href={href} target="_blank" rel="noopener noreferrer"

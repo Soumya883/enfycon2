@@ -13,6 +13,7 @@ import ContactPage from "./pages/ContactPage";
 import IndustriesPage from "./pages/IndustriesPage";
 import BlogPage from "./pages/BlogPage";
 import ProductsPage from "./pages/ProductsPage";
+import ProductDetailPage from "./pages/ProductDetailPage";
 import GCCPage from "./pages/GCCPage";
 import CulturePage from "./pages/CulturePage";
 import CSRPage from "./pages/CSRPage";
@@ -43,6 +44,7 @@ function Router() {
       <Route path={"/industries"} component={IndustriesPage} />
       <Route path={"/blogs"} component={BlogPage} />
       <Route path={"/products"} component={ProductsPage} />
+      <Route path={"/products/:id"} component={ProductDetailPage} />
       <Route path={"/global-capability-center"} component={GCCPage} />
       <Route path={"/pricing"} component={PricingPage} />
       <Route path={"/portfolio"} component={PortfolioPage} />

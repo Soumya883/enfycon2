@@ -2,7 +2,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { MapPin, Phone, Mail, Lock, ArrowUpRight, CheckCircle2, ShieldCheck, Sparkles } from "lucide-react";
+import { MapPin, Phone, Mail, Lock, ArrowUpRight, CheckCircle2, ShieldCheck, Sparkles, MessageCircle, Facebook, Clock } from "lucide-react";
 import { toast } from "sonner";
 
 const locations = [
@@ -148,26 +148,72 @@ export default function ContactPage() {
                 <MapPin className="w-3.5 h-3.5 text-cyan-400" />
                 Global Communication Hub
               </div>
-              <h1 className="text-4xl md:text-5xl lg:text-7xl font-extrabold text-white tracking-tight mb-6 leading-tight drop-shadow-lg">
+              <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-white tracking-tight mb-6 leading-tight drop-shadow-lg">
                 Let's Build the Future <br className="hidden md:block" />
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 via-blue-400 to-cyan-400">Together.</span>
               </h1>
-              <p className="text-slate-300 text-lg md:text-xl mb-10 leading-relaxed font-light max-w-lg">
-                Have a question about our enterprise AI solutions, cybersecurity, or IT staffing? Reach out to our global team and get a response within 24 hours.
+              <p className="text-slate-300 text-base md:text-lg mb-8 leading-relaxed font-light max-w-lg">
+                Have a question about our enterprise AI solutions, cybersecurity, or IT staffing? Reach out to our global team and get a response within 2 hours.
               </p>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs font-extrabold tracking-widest uppercase text-slate-300">
-                <div className="flex items-center gap-3 bg-slate-900/50 backdrop-blur-md border border-slate-700/50 p-4 rounded-2xl shadow-lg">
-                  <div className="p-2 rounded-full bg-emerald-500/10 text-emerald-400">
-                    <ShieldCheck className="w-4 h-4" />
+              {/* Instant Communication Channels */}
+              <div className="space-y-4 mb-10 max-w-lg">
+                <h3 className="text-xs font-extrabold uppercase tracking-widest text-slate-400 mb-3">Instant Channels</h3>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <a 
+                    href="https://wa.me/12012017078?text=Hello%20Enfycon%20Team,%20I'd%20like%20to%20discuss%20an%20enterprise%20project." 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-3.5 bg-emerald-600/10 hover:bg-emerald-600/20 border border-emerald-500/20 hover:border-emerald-500/40 p-4 rounded-2xl shadow-lg transition-all group"
+                  >
+                    <div className="w-10 h-10 rounded-xl bg-emerald-500/15 text-emerald-400 flex items-center justify-center group-hover:scale-105 transition-transform">
+                      <MessageCircle className="w-5 h-5 fill-emerald-400 text-emerald-600" />
+                    </div>
+                    <div>
+                      <p className="text-white font-bold text-xs uppercase tracking-wider">WhatsApp</p>
+                      <p className="text-emerald-400 text-[10px] font-semibold">Instant Chat</p>
+                    </div>
+                  </a>
+
+                  <a 
+                    href="https://m.me/enfycon" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-3.5 bg-blue-600/10 hover:bg-blue-600/20 border border-blue-500/20 hover:border-blue-500/40 p-4 rounded-2xl shadow-lg transition-all group"
+                  >
+                    <div className="w-10 h-10 rounded-xl bg-blue-500/15 text-blue-400 flex items-center justify-center group-hover:scale-105 transition-transform">
+                      <Facebook className="w-5 h-5" />
+                    </div>
+                    <div>
+                      <p className="text-white font-bold text-xs uppercase tracking-wider">Messenger</p>
+                      <p className="text-blue-400 text-[10px] font-semibold">Direct Message</p>
+                    </div>
+                  </a>
+
+                  <a 
+                    href="tel:+12012017078" 
+                    className="flex items-center gap-3.5 bg-cyan-600/10 hover:bg-cyan-600/20 border border-cyan-500/20 hover:border-cyan-500/40 p-4 rounded-2xl shadow-lg transition-all group"
+                  >
+                    <div className="w-10 h-10 rounded-xl bg-cyan-500/15 text-cyan-400 flex items-center justify-center group-hover:scale-105 transition-transform">
+                      <Phone className="w-5 h-5" />
+                    </div>
+                    <div>
+                      <p className="text-white font-bold text-xs uppercase tracking-wider">Direct Call</p>
+                      <p className="text-cyan-400 text-[10px] font-semibold">HQ Hotline</p>
+                    </div>
+                  </a>
+
+                  <div 
+                    className="flex items-center gap-3.5 bg-slate-900/50 border border-slate-700/50 p-4 rounded-2xl shadow-lg"
+                  >
+                    <div className="w-10 h-10 rounded-xl bg-slate-800 text-cyan-300 flex items-center justify-center">
+                      <Clock className="w-5 h-5" />
+                    </div>
+                    <div>
+                      <p className="text-white font-bold text-xs uppercase tracking-wider">Response</p>
+                      <p className="text-slate-400 text-[10px] font-semibold">Under 2 Hours</p>
+                    </div>
                   </div>
-                  <span>24/7 Support</span>
-                </div>
-                <div className="flex items-center gap-3 bg-slate-900/50 backdrop-blur-md border border-slate-700/50 p-4 rounded-2xl shadow-lg">
-                  <div className="p-2 rounded-full bg-blue-500/10 text-blue-400">
-                    <CheckCircle2 className="w-4 h-4" />
-                  </div>
-                  <span>Global Coverage</span>
                 </div>
               </div>
             </motion.div>

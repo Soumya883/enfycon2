@@ -320,10 +320,10 @@ export default function ProductsPage() {
                     exit={{ opacity: 0, scale: 0.95 }}
                     transition={{ duration: 0.5, delay: i * 0.05 }}
                     whileHover={{ y: -10 }}
-                    className="bg-slate-900/60 backdrop-blur-xl rounded-[24px] border border-slate-800 shadow-xl hover:shadow-[0_20px_60px_rgba(99,102,241,0.15)] hover:border-indigo-500/40 transition-all duration-500 flex flex-col overflow-hidden group"
+                    className="bg-slate-900/60 backdrop-blur-xl rounded-[24px] border border-slate-800 shadow-xl hover:shadow-[0_20px_60px_rgba(99,102,241,0.15)] hover:border-indigo-500/40 transition-all duration-500 flex flex-col overflow-hidden group cursor-pointer"
                   >
                     {/* Image Preview Container */}
-                    <div className="relative h-56 w-full overflow-hidden bg-slate-950">
+                    <a href={`/products/${product.id}`} className="relative h-56 w-full overflow-hidden bg-slate-950 block">
                       <div className="absolute inset-0 bg-indigo-600/20 mix-blend-overlay group-hover:opacity-0 transition-opacity duration-500 z-10 pointer-events-none" />
                       <img
                         src={product.image}
@@ -351,7 +351,7 @@ export default function ProductsPage() {
                           {product.tagline}
                         </p>
                       </div>
-                    </div>
+                    </a>
 
                     {/* Content Section */}
                     <div className="p-8 flex-1 flex flex-col justify-between">
@@ -375,10 +375,10 @@ export default function ProductsPage() {
                       {/* Action CTA */}
                       <div className="pt-6 border-t border-slate-800/80 flex items-center justify-between">
                         <a
-                          href="/contact-us"
+                          href={`/products/${product.id}`}
                           className="inline-flex items-center gap-2 text-sm font-extrabold text-cyan-400 hover:text-cyan-300 transition-colors group/link"
                         >
-                          <span className="relative after:absolute after:bottom-0 after:left-0 after:right-0 after:h-px after:bg-cyan-400 after:scale-x-0 group-hover/link:after:scale-x-100 after:transition-transform after:duration-300 after:origin-left">Request Demo</span>
+                          <span className="relative after:absolute after:bottom-0 after:left-0 after:right-0 after:h-px after:bg-cyan-400 after:scale-x-0 group-hover/link:after:scale-x-100 after:transition-transform after:duration-300 after:origin-left">Learn More</span>
                           <motion.span
                             className="inline-block"
                             whileHover={{ x: 5 }}
@@ -387,9 +387,12 @@ export default function ProductsPage() {
                             <ArrowRight className="w-4 h-4 group-hover/link:translate-x-1.5 transition-transform duration-300" />
                           </motion.span>
                         </a>
-                        <span className="text-xs text-slate-500 font-bold uppercase tracking-wider flex items-center gap-1.5 bg-slate-800/50 px-2.5 py-1 rounded-md">
-                          Enterprise <ExternalLink className="w-3.5 h-3.5" />
-                        </span>
+                        <a
+                          href={`/contact-us?subject=Demo%20Inquiry%20for%20${encodeURIComponent(product.name)}`}
+                          className="text-xs text-slate-300 hover:text-indigo-400 font-extrabold uppercase tracking-wider flex items-center gap-1.5 bg-slate-800/50 hover:bg-slate-800 px-3.5 py-2 rounded-xl border border-slate-700/50 transition-all active:scale-95"
+                        >
+                          Request Demo
+                        </a>
                       </div>
                     </div>
                   </motion.div>
